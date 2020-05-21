@@ -2,14 +2,13 @@ import React, { useEffect } from 'react';
 
 import './ElectionManagementPage.css';
 import { ElectionTable } from '../election-mgmt/ElectionTable';
-import { refreshElections } from '../../actions/electionManagementActions';
 
 export const ElectionManagementPage = (props) => {
-    const {elections} = props;
+    const { onRefreshElections, elections} = props;
 
     useEffect(() => {
         console.log('useEffect refreshElections');
-        refreshElections();
+        onRefreshElections();
       }, []);
     
     return ( <>
