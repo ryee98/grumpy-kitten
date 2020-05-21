@@ -23,6 +23,15 @@ export const electionsReducer = (elections = [], action) => {
     return elections;
 };
 
+export const electionQuestionReducer = (questions = [], action) => {
+    console.log('electionReducer', action.type, questions);
+    if (SAVE_QUESTIONS === action.type) {
+        return questions.concat(action.question);
+    };
+
+    return questions;
+};
+
 export const castVoteSelectedElectionReducer = (castVoteSelectedElection = {}, action) => {
 
     if (action.type === CAST_VOTE_SELECTED_ELECTION_ACTION) {
@@ -37,6 +46,7 @@ export const votingSystemReducer = combineReducers({
     ballots: ballotsReducer,
     castVoteSelectedElection: castVoteSelectedElectionReducer,
     elections: electionsReducer,
+    electionQuestions: electionQuestionReducer,
 
 });
 

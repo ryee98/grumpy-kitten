@@ -24,12 +24,14 @@ export const UPDATE_ELECTION_QUESTION_REQUEST_ACTION = "UPDATE_ELECTION_QUESTION
 
 const ELECTIONS_ENDPOINT = 'http://localhost:3060/elections';
 
+export const SAVE_QUESTIONS_ACTION = "SAVE_QUESTION";
 export const CANCEL_ELECTION_ACTION = 'CANCEL_ELECTION';
 export const CANCEL_ELECTION_QUESTION_ACTION = 'CANCEL_ELECTION_QUESTION';
 
 export const createCancelAction = () => ({ type: CANCEL_ELECTION_ACTION });
 export const createCancelQuestionAction = () => ({ type: CANCEL_ELECTION_QUESTION_ACTION });
 
+export const createSaveQuestionAction = (question) => ({ type: SAVE_QUESTIONS_ACTION, question});
 export const createRefreshElectionsRequestAction = () => ({ type: REFRESH_ELECTIONS_REQUEST_ACTION });
 export const createRefreshElectionsDoneAction = (elections) => ({ type: REFRESH_ELECTIONS_DONE, elections });
 export const createAddElectionRequestAction = (election) => ({ type: ADD_ELECTION_REQUEST_ACTION, election });
