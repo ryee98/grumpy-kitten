@@ -4,12 +4,13 @@ import { useForm } from '../../hooks/useForm';
  
 export const VoterForm = ({ buttonText, onSubmitVoter }) => {
 
-  const [ voterForm, change ] = useForm({
-    make: '', model: '', year: '', color: '', price: '',
+  const [ voterForm, change, resetVoterForm ] = useForm({
+    firstName: '', lastName: '', street: '', city: '', county: '', dob: '', email: '', phone: '',
   });
 
   const submitVoter = () => {
     onSubmitVoter({ ...voterForm });
+    resetVoterForm();
   };
 
   return (
@@ -17,12 +18,12 @@ export const VoterForm = ({ buttonText, onSubmitVoter }) => {
       <div>
         <label htmlFor="fname-input">First Name:</label>
         <input type="text" id="fname-input"
-          name="firstname" value={voterForm.firstName} onChange={change} />
+          name="firstName" value={voterForm.firstName} onChange={change} />
       </div>
       <div>
         <label htmlFor="lname-input">Last Name:</label>
         <input type="text" id="lname-input"
-          name="lastname" value={voterForm.lastName} onChange={change} />
+          name="lastName" value={voterForm.lastName} onChange={change} />
       </div>
       <div>
         <label htmlFor="street-input">Street Address:</label>
@@ -37,7 +38,7 @@ export const VoterForm = ({ buttonText, onSubmitVoter }) => {
       <div>
         <label htmlFor="county-input">County:</label>
         <input type="text" id="county-input"
-          name="county" value={voterForm.price} onChange={change} />
+          name="county" value={voterForm.county} onChange={change} />
       </div>
       <div>
         <label htmlFor="dob-input">Date of birth (mm/dd/yyyy):</label>
