@@ -25,7 +25,7 @@ export const createEditVoterAction = voterId =>
 export const createCancelVoterAction = () =>
   ({ type: CANCEL_VOTER_ACTION });
 
-const VOTERS_ENDPOINT = 'http://localhost:3060/voters';
+const VOTERS_ENDPOINT = 'http://localhost:3060/voters/';
 
 export const refreshVoters = () => {
   return dispatch => {
@@ -48,16 +48,12 @@ export const addVoter = voter => {
   };
 };
 
-// export const deleteColor = colorId => {
-
-//   return dispatch => {
-
-//     dispatch(createDeleteColorRequestAction(colorId));
-//     return fetch('http://localhost:3060/colors/' + encodeURIComponent(colorId), {
-//       method: 'DELETE',
-//     })
-//       .then(() => dispatch(refreshColors()));
-
-//   };
-
-// };
+export const deleteVoter = voterId => {
+  return dispatch => {
+    dispatch(createDeleteVoterRequestAction(voterId));
+    return fetch(VOTERS_ENDPOINT + encodeURIComponent(voterId), {
+      method: 'DELETE',
+    })
+      .then(() => dispatch(refreshVoters()));
+  };
+};

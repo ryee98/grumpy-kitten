@@ -37,17 +37,6 @@
       "electionsVoted": []
     },
     {
-      "firstname": "Deepti",
-      "lastname": "S",
-      "street": "Curlew Ct",
-      "city": "Foster city",
-      "county": "San Mateo",
-      "dob": "01/01/1990",
-      "email": "deepti@grumpy.com",
-      "phone": "650-999-9999",
-      "id": 6
-    },
-    {
       "firstName": "Sree",
       "lastName": "Th",
       "street": "Patterson",
@@ -57,6 +46,28 @@
       "email": "sree@grumpy.com",
       "phone": "805-555-5555",
       "id": 11
+    },
+    {
+      "firstName": "Shal",
+      "lastName": "Grassi",
+      "street": "garcia ave",
+      "city": "Mtn View",
+      "county": "Santa Clara",
+      "dob": "01/01/2020",
+      "email": "shal@grumpy.com",
+      "phone": "650-111-1111",
+      "id": 12
+    },
+    {
+      "firstName": "Richard",
+      "lastName": "Yee",
+      "street": "address1",
+      "city": "Palo Alto",
+      "county": "Santa Clara",
+      "dob": "01/01/1990",
+      "email": "richard@grumpy.com",
+      "phone": "650-444-4444",
+      "id": 13
     }
   ],
   "ballots": [
