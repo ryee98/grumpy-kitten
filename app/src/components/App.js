@@ -38,7 +38,7 @@ export const App = () => {
             </Content>
             <Switch>
                 <Route path="/election_mgmt" exact>
-                    <Sidebar className="about-page" />
+                    <Sidebar className="election-mgmt-page" />
                 </Route>
                 <Route path="/" >
                     <Sidebar className="home-page" />

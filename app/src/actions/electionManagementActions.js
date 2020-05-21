@@ -15,7 +15,7 @@ the type of action being performed. Types should typically be defined as string 
 Once your app is large enough, you may want to move them into a separate module.
 */
 
-export const REFRESH_ELECTIONS_REQUEST_ACTION = "REFRESH_ELEcTIONS_REQUEST";
+export const REFRESH_ELECTIONS_REQUEST_ACTION = "REFRESH_ELECTIONS_REQUEST";
 export const REFRESH_ELECTIONS_DONE = "REFRESH_ELECTIONS_DONE";
 export const ADD_ELECTION_REQUEST_ACTION = "ADD_ELECTION_REQUEST";
 export const ADD_ELECTION_QUESTION_REQUEST_ACTION = "ADD_ELECTION_QUESTION_REQUEST";
@@ -36,7 +36,9 @@ export const createAddElectionRequestAction = (election) => ({ type: ADD_ELECTIO
 export const createUpdateElectionRequestAction = (election) => ({ type: UPDATE_ELECTION_REQUEST_ACTION, election });
 
 export const refreshElections = () => {
+    console.log('refresh elections');
     return dispatch => {
+        console.log('before dispatching');
         dispatch(createRefreshElectionsRequestAction());
         return fetch(ELECTIONS_ENDPOINT)
             .then(resp => resp.json())
