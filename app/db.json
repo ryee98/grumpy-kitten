@@ -37,77 +37,15 @@
       "electionsVoted": []
     },
     {
-      "make": "",
-      "model": "",
-      "year": "",
-      "color": "",
-      "price": "",
-      "id": 4
-    },
-    {
-      "make": "",
-      "model": "",
-      "year": "",
-      "color": "",
-      "price": "",
-      "id": 5
-    },
-    {
-      "make": "",
-      "model": "",
-      "year": "",
-      "color": "",
-      "price": "",
       "firstname": "Deepti",
       "lastname": "S",
       "street": "Curlew Ct",
       "city": "Foster city",
-      "county": "e",
+      "county": "San Mateo",
       "dob": "01/01/1990",
       "email": "deepti@grumpy.com",
       "phone": "650-999-9999",
       "id": 6
-    },
-    {
-      "make": "",
-      "model": "",
-      "year": "",
-      "color": "",
-      "price": "",
-      "county": "o",
-      "city": "werewr",
-      "id": 7
-    },
-    {
-      "make": "",
-      "model": "",
-      "year": "",
-      "color": "",
-      "price": "",
-      "county": "o",
-      "city": "werewr",
-      "id": 8
-    },
-    {
-      "make": "",
-      "model": "",
-      "year": "",
-      "color": "",
-      "price": "",
-      "county": "t",
-      "city": "werewr",
-      "id": 9
-    },
-    {
-      "firstName": "wewe",
-      "lastName": "wrw",
-      "street": "werwe",
-      "city": "werwe",
-      "county": "werwe",
-      "dob": "234234",
-      "email": "454",
-      "phone": "32432432",
-      "id": 10
     },
     {
       "firstName": "Sree",
