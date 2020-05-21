@@ -9,7 +9,7 @@ import { PageHeader } from './PageHeader';
 import { MainMenu } from './MainMenu';
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
-
+import { ElectionManagementPageContainer } from './containers/ElectionManagementPageContainer';
 
 import { Sidebar } from './blocks/Sidebar';
 import { PageFooter } from './PageFooter';
@@ -29,10 +29,13 @@ export const App = () => {
                     <Route path="/about" exact>
                         <AboutPage />
                     </Route>
+                    <Route path="/election_mgmt" exact>
+                        <ElectionManagementPageContainer />
+                    </Route>
                 </Switch>
             </Content>
             <Switch>
-                <Route path="/about" exact>
+                <Route path="/election_mgmt" exact>
                     <Sidebar className="about-page" />
                 </Route>
                 <Route path="/" >
