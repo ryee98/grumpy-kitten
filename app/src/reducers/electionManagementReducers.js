@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-import {REFRESH_ELECTIONS_DONE, } from '../actions/electionManagementActions';
+import {REFRESH_ELECTIONS_DONE, SAVE_QUESTIONS_ACTION} from '../actions/electionManagementActions';
 import {REFRESH_BALLOTS_DONE } from '../actions/ballotManagementActions';
 import {CAST_VOTE_SELECTED_ELECTION_ACTION } from '../actions/castVoteManagementActions';
 
@@ -25,7 +25,7 @@ export const electionsReducer = (elections = [], action) => {
 
 export const electionQuestionReducer = (questions = [], action) => {
     console.log('electionReducer', action.type, questions);
-    if (SAVE_QUESTIONS === action.type) {
+    if (SAVE_QUESTIONS_ACTION === action.type) {
         return questions.concat(action.question);
     };
 

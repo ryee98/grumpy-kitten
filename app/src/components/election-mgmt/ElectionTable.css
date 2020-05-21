@@ -10,9 +10,14 @@
     background-color: lightskyblue;
   }
 
-  #elecion-table > td {
+  #election-table td {
     border: 1px solid grey;
     text-align: center;
     vertical-align: middle;
     padding: 3px;
+  }
+
+  #election-table button {
+    border-radius: 15px;
+    background-color: lightblue;
   }

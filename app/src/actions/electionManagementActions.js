@@ -27,9 +27,11 @@ const ELECTIONS_ENDPOINT = 'http://localhost:3060/elections';
 export const SAVE_QUESTIONS_ACTION = "SAVE_QUESTION";
 export const CANCEL_ELECTION_ACTION = 'CANCEL_ELECTION';
 export const CANCEL_ELECTION_QUESTION_ACTION = 'CANCEL_ELECTION_QUESTION';
+export const CREATE_ELECTION_ACTION = "CREATE_ELECTION_ACTION";
 
 export const createCancelAction = () => ({ type: CANCEL_ELECTION_ACTION });
 export const createCancelQuestionAction = () => ({ type: CANCEL_ELECTION_QUESTION_ACTION });
+export const createElectionAction = (createStatus) =>({ type: CREATE_ELECTION_ACTION, createStatus});
 
 export const createSaveQuestionAction = (question) => ({ type: SAVE_QUESTIONS_ACTION, question});
 export const createRefreshElectionsRequestAction = () => ({ type: REFRESH_ELECTIONS_REQUEST_ACTION });
@@ -61,6 +63,7 @@ export const addElection = (election) => {
 };
 
 export const updateElection = (election) => {
+    console.log('updateElection');
     return dispatch => {
         dispatch(createUpdateElectionRequestAction(election));
         return fetch(ELECTIONS_ENDPOINT + '/' + encodeURIComponent(election.id), {

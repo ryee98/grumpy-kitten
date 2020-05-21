@@ -80,15 +80,35 @@
       ]
     }
   ],
-  "Elections": [
+  "elections": [
     {
       "id": 1,
-      "name": "Election1",
-      "questions": [
-        {
-          "id": 1,
-          "q": "do u like pasta"
-        }
+      "name": "My First Election",
+      "ballotItems": [
+        "Question 1",
+        "Question 2",
+        "Question 3"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Election 2",
+      "ballotItems": [
+        "Question 1",
+        "Question 2"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Election 3",
+      "ballotItem": "qqq"
+    },
+    {
+      "id": 5,
+      "name": "Election 33",
+      "ballotItem": "",
+      "ballotItems": [
+        "VVVV"
       ]
     }
   ]

@@ -14,7 +14,7 @@ export const ElectionViewRow = (props) => {
             <DataCell key={column.field}>{election[column.field]}</DataCell>
             );
         })}
-        <DataCell></DataCell>
+        <DataCell><button>View Results</button></DataCell>
         </tr>
     )
 }

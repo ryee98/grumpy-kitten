@@ -16,7 +16,8 @@
     padding-bottom: 10px;
   }
 
-  .election-management-page {
-    
+  .election-mgmt-page > button {
+    border-radius: 15px;
+
   }
   
