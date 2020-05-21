@@ -1,0 +1,18 @@
+#car-form label {
+    width: 100px;
+    float: left;
+    margin-right: 15px;
+    text-align: right;
+}
+
+#car-form div {
+  padding-top: 10px;
+}
+
+#car-form input {
+  display: inline-block;
+}
+
+#car-form button {
+    border-radius: 10px;
+}
