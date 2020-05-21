@@ -17,3 +17,9 @@
   background-image: url(../images/sidebar/register-vote.jpeg);
   background-size: auto;
 }
+
+.voter-list-page {
+  grid-area: sidebar;
+  background-image: url(../images/sidebar/register-vote.jpeg);
+  background-size: auto;
+}
