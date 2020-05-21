@@ -1,8 +1,18 @@
 import { combineReducers } from 'redux';
 
 import {REFRESH_ELECTIONS_DONE, } from '../actions/electionManagementActions';
-
+import {REFRESH_BALLOTS_DONE } from '../actions/ballotManagementActions';
 import {CAST_VOTE_SELECTED_ELECTION_ACTION } from '../actions/castVoteManagementActions';
+
+
+export const ballotsReducer = (ballots = [], action) => {
+    console.log('ballotsReducer', action.type, ballots);
+    if (REFRESH_BALLOTS_DONE === action.type) {
+        return action.ballots;
+    };
+
+    return ballots;
+};
 
 export const electionsReducer = (elections = [], action) => {
     console.log('electionsReducer', action.type, elections);
@@ -20,20 +30,13 @@ export const castVoteSelectedElectionReducer = (castVoteSelectedElection = {}, a
     } else{
         return null
     }
-  
-    // if ([
-    //  
-    //   
-    // ].includes(action.type)) {
-    //   return -1;
-    // }
-  
     return castVoteSelectedElection;
-  
   };
 
 export const votingSystemReducer = combineReducers({
+    ballots: ballotsReducer,
     castVoteSelectedElection: castVoteSelectedElectionReducer,
     elections: electionsReducer,
+
 });
 
