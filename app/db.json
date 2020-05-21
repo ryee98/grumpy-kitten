@@ -42,7 +42,7 @@
       "id": 1,
       "voterId": 1,
       "electionName": "Election1",
-      "voterReponse": [false]
+      "voterReponse": [false, true]
 
     }
   ],
@@ -54,6 +54,24 @@
         {
           "id": 1,
           "q": "do u like pasta"
+        },
+        {
+          "id": 2,
+          "q": "do u like pizza"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Election2",
+      "questions": [
+        {
+          "id": 1,
+          "q": "do u like cat"
+        },
+        {
+          "id": 2,
+          "q": "do u like dog"
         }
       ]
     }
