@@ -16,11 +16,14 @@ export const VoterTable = (
       <thead>
         <tr>
           <HeaderCell>Id</HeaderCell>
-          <HeaderCell>Make</HeaderCell>
-          <HeaderCell>Model</HeaderCell>
-          <HeaderCell>Year</HeaderCell>
-          <HeaderCell>Color</HeaderCell>
-          <HeaderCell>Price</HeaderCell>
+          <HeaderCell>First Name</HeaderCell>
+          <HeaderCell>Last Name</HeaderCell>
+          <HeaderCell>Address</HeaderCell>
+          <HeaderCell>City</HeaderCell>
+          <HeaderCell>County</HeaderCell>
+          <HeaderCell>DOB (mm/dd/yyyy)</HeaderCell>
+          <HeaderCell>Email</HeaderCell>
+          <HeaderCell>Phone</HeaderCell>
           <HeaderCell>Action</HeaderCell>
         </tr>
       </thead>

@@ -1,44 +1,35 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { useSelector, useDispatch } from 'react-redux';
+
+import {
+    refreshVoters, 
+    // addVoter, saveVoter, deleteVoter,
+    // createEditVoterAction, createCancelVoterAction
+} from '../../actions/voterActions';
+  
 import { VoterRegistrationPage } from '../pages/VoterRegistrationPage';
-
-// TOOO uncomment
-// import {
-//     refreshCars, addCar, updateCar, deleteCar, createEditAction, createCancelAction
-// } from '../../actions/carToolActions';
-
+  
 export const VoterRegistrationPageContainer = () => {
 
-    const voters = [];
-    //useSelector(state => state.voters);
-    console.log("voter", voters);
-    const editVoterId = -1;
-    //useSelector(state => state.editVoterId);
+  const voters = useSelector(state => state.voters);
+  const editVoterId = useSelector(state => state.editVoterId);
 
-    // TODO -- uncomment
-    const dispatchProps = [];
-    //bindActionCreators({ 
-    //     onAddCar: addCar,
-    //     onUpdateCar: updateCar,
-    //     onDeleteCar: deleteCar,
-    //     onEditCar: createEditAction,
-    //     onCancelCar: createCancelAction,
-    //     onRefreshCars: refreshCars,
-    // }, useDispatch());
+  const dispatchProps = bindActionCreators({
+    onRefreshVoters: refreshVoters,
+    // onAddVoter: addVoter,
+    // onSaveVoter: saveVoter,
+    // onDeleteVoter: deleteVoter,
+    // onEditVoter: createEditVoterAction,
+    // onCancelVoter: createCancelVoterAction,
+  }, useDispatch());
 
-    /* the above code is a replacement for doing this
-    const dispatch = useDispatch();
-    const doAdd = car => dispatch(createAddAction(car));
-    const doUpdate = car => dispatch(createUpdateAction(car));
-    const doDelete = id => dispatch(createDeleteAction(id));
-    const doEdit = id => dispatch(createEditAction(id));
-    const doCancel = () => dispatch(createCancelAction());
-    */
 
-    return <VoterRegistrationPage {...dispatchProps} voters={voters} editVoterId={editVoterId} />
+  return <VoterRegistrationPage
+    {...dispatchProps}
+    voters={voters}
+    editVoterId={editVoterId}
+    headerText="Voter Registration" />;
 };
-
-
 
 
