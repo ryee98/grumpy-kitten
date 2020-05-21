@@ -5,15 +5,14 @@ import { ElectionManagementPage } from '../pages/ElectionManagementPage';
 import { refreshElections, createSaveQuestionAction } from '../../actions/electionManagementActions';
 
 export const ElectionManagementPageContainer = () => {
-  const elections = useSelector(state => state.elections);
-  const questions = useState()
+  const {elections, electionQuestions} = useSelector(state => state);
   console.log('ElectionManagementPageContainer elections', elections);
 
   const dispatchProps = bindActionCreators({
     onRefreshElections: refreshElections,
-    onSubmitBallotIem: createSaveQuestionAction,
+    onSubmitBallotItem: createSaveQuestionAction,
 
   }, useDispatch());
 
-    return <ElectionManagementPage {...dispatchProps} elections={elections}/>;
+    return <ElectionManagementPage {...dispatchProps} elections={elections} electionQuestions={electionQuestions}/>;
   };

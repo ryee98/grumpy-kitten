@@ -1,31 +1,31 @@
 {
   "voters": [
-        {
-          "id":1,
-          "firstName": "Jabene",
-          "lastName": "Doe",
-          "street": "Street 1",
-          "county": "County 1",
-          "city": "City 1",
-          "dob": "01/01/1983",
-          "email": "abc@grumpy.com",
-          "phone": "7141233456",
-          "electionsVoted": []
-      },
-      {
-        "id":2,
-        "firstName": "Jab",
-        "lastName": "Does",
-        "street": "Street 2",
-        "county": "County 2",
-        "city": "City 2",
-        "dob": "01/01/1984",
-        "email": "abcd@grumpy.com",
-        "phone": "7141233456",
-        "electionsVoted": []
+    {
+      "id": 1,
+      "firstName": "Jabene",
+      "lastName": "Doe",
+      "street": "Street 1",
+      "county": "County 1",
+      "city": "City 1",
+      "dob": "01/01/1983",
+      "email": "abc@grumpy.com",
+      "phone": "7141233456",
+      "electionsVoted": []
     },
     {
-      "id":3,
+      "id": 2,
+      "firstName": "Jab",
+      "lastName": "Does",
+      "street": "Street 2",
+      "county": "County 2",
+      "city": "City 2",
+      "dob": "01/01/1984",
+      "email": "abcd@grumpy.com",
+      "phone": "7141233456",
+      "electionsVoted": []
+    },
+    {
+      "id": 3,
       "firstName": "Joe",
       "lastName": "Don",
       "street": "Street 3",
@@ -37,7 +37,7 @@
       "electionsVoted": []
     }
   ],
-  "ballots" : [
+  "ballots": [
     {
       "id": 1,
       "voterId": 1,
@@ -46,35 +46,43 @@
 
     }
   ],
-  "Elections": [
+  "elections": [
     {
       "id": 1,
-      "name": "Election1",
-      "questions": [
-        {
-          "id": 1,
-          "q": "do u like pasta"
-        },
-        {
-          "id": 2,
-          "q": "do u like pizza"
-        }
+      "name": "My First Election",
+      "ballotItems": [
+        "Question 1",
+        "Question 2",
+        "Question 3"
       ]
     },
     {
       "id": 2,
-      "name": "Election2",
-      "questions": [
-        {
-          "id": 1,
-          "q": "do u like cat"
-        },
-        {
-          "id": 2,
-          "q": "do u like dog"
-        }
+      "name": "Election 2",
+      "ballotItems": [
+        "Question 1",
+        "Question 2"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Election 3",
+      "ballotItem": "qqq"
+    },
+    {
+      "id": 4,
+      "name": "Election 3",
+      "ballotItem": "sss"
+    },
+    {
+      "id": 5,
+      "name": "Election 33",
+      "ballotItem": "",
+      "ballotItems": [
+        "VVVV",
+        "",
+        ""
       ]
     }
   ]
- 
 }

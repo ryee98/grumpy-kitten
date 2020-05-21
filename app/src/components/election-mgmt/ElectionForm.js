@@ -1,48 +1,57 @@
 import React from 'react';
 
 import { useForm } from '../../hooks/useForm';
-import './CarForm.css'
+import './ElectionForm.css'
 
-export const CarForm = ({buttonText, onSubmitCar}) => {
-
-    const [ carForm, change, resetCarForm] = useForm ({
-        id:'', make:'',model:'',year:'',color:'',price:''
+export const ElectionForm = (props) => {
+    const {electionQuestions, onSubmitElection, onSubmitBallotItem, onCancel } = props;
+    const [ electionForm, change, resetElectionForm] = useForm ({
+        id:'', name:'', ballotItem: ''
     });
 
-    const submitCar = () => {
-        onSubmitCar({...carForm});
-        resetCarForm();
+    const submitElection = () => {
+        onSubmitElection({...electionForm});
+        resetElectionForm();
     };
 
+    const clearBallotItem = () => {
+        console.log('cleatBallotItem');
+        electionForm.ballotItem = '';
+    }
+
+    const submitBallotItem = () => {
+        console.log('saveBallotItem', electionForm);
+        onSubmitBallotItem(electionForm.ballotItem);
+        electionForm.ballotItem = '';
+
+    }
+
     return (
-        <form id="car-form">
+        <form id="election-form">
         <div>
-            <label htmlFor="car-make-input">Make:</label>
-            <input type="text" id="car-make-input" name="make" value={carForm.make}  onChange={change}/>
+            <label htmlFor="election-name-input">Election Name:</label>
+            <input type="text" id="election-name-input" name="name" value={electionForm.name}  onChange={change}/>
         </div>
         <div>
-            <label htmlFor="car-model-input">Model:</label>
-            <input type="text" id="car-model-input" name="model" value={carForm.model}  onChange={change}/>
+            <ol>
+            
+            </ol>
         </div>
         <div>
-            <label htmlFor="car-year-input">Year:</label>
-            <input type="number" id="car-year-input" name="year" min="{new Date().getFullYear()- 10}" max="{new Date().getFullYear()}" value={carForm.year}  onChange={change}/>
+            <label htmlFor="ballot-question-input">Ballot Question:</label>
+            <input type="text" id="ballot-question-input" name="ballotItem" value={electionForm.ballotItem}  onChange={change}/>
         </div>
         <div>
-            <label htmlFor="car-color-input">Color:</label>
-            <input type="text" id="car-color-input" name="color" value={carForm.color}  onChange={change}/>
+            <button type="button" onClick={submitBallotItem}>Save Ballot Item</button> <button type="button" onClick={() =>clearBallotItem()}>Clear Ballot Item</button>
         </div>
         <div>
-            <label htmlFor="car-price-input">Price:</label>
-            <input type="number" id="car-price-input" name="price" value={carForm.price}  onChange={change}/>
-        </div>
-        <div>
-            <button type="button" onClick={submitCar}>{buttonText}</button>
+            <button type="button" onClick={submitElection}>Save Election</button>
+            <button type="button" onClick={onCancel}>Cancel</button>
         </div>
     </form>
     )
 }
 
-CarForm.defaultProps = {
-    buttonText: 'Submit Car',
+ElectionForm.defaultProps = {
+    buttonText: 'Default Text',
 }
