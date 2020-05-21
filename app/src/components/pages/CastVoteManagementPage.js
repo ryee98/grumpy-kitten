@@ -1,26 +1,23 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import {Table} from "../common/Table";
+import {CastVoteBallotForm} from "../castVote/CastVoteBallotForm"
 
 
 export const CastVoteManagementPage =  (props) => {
-    const { onRefreshElections, elections, onCastElectionVote, castElectionVoteID} = props;
-
-    let showCastVotePage = false,
-        electionSelected = [];
+    const { onRefreshElections, elections, onCastElectionVote, castVoteSelectedElection} = props;
 
     useEffect(() => {
         console.log('useEffect refreshElections');
         onRefreshElections();
     }, []);
 
-    const displayCastVotePage = (electionId)  => {
-        onCastElectionVote(electionId);
-        electionSelected = elections.filter(e => e.id === electionId);
+    const displayCastVotePage = (election)  => {
+        onCastElectionVote(election);
     }
     return <>
-        {castElectionVoteID  > -1
-          ?  <div>fodgdfigu</div>
+        {castVoteSelectedElection
+          ?  <CastVoteBallotForm  buttonText="Cast Vote" electionSelectedForVote={castVoteSelectedElection}/>
           : <Table elections={elections} onActionSubmit={displayCastVotePage}/>}
     </>
 }

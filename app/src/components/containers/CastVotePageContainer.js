@@ -3,19 +3,19 @@ import { bindActionCreators } from 'redux';
 import { useSelector, useDispatch } from 'react-redux';
 import { CastVoteManagementPage } from '../pages/CastVoteManagementPage';
 import { refreshElections } from '../../actions/electionManagementActions';
-import { createCastVoteElectionAction } from '../../actions/castVoteManagementActions';
+import { createCastVoteSelectedElectionAction } from '../../actions/castVoteManagementActions';
 
 export const CastVotePageContainer = () => {
 
  const elections = useSelector(state => state.elections);
- const castElectionVoteID = useSelector(state => state.castElectionVoteId);
+ const castVoteSelectedElection = useSelector(state => state.castVoteSelectedElection);
 
  console.log('CastVotePageContainer --- elections', elections);
 
   const dispatchProps = bindActionCreators({
     onRefreshElections: refreshElections,
-    onCastElectionVote:createCastVoteElectionAction
+    onCastElectionVote:createCastVoteSelectedElectionAction
   }, useDispatch());
 
-    return <CastVoteManagementPage {...dispatchProps} elections={elections} castElectionVoteID={castElectionVoteID}/>;
+    return <CastVoteManagementPage {...dispatchProps} elections={elections} castVoteSelectedElection={castVoteSelectedElection}/>;
   };

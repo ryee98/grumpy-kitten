@@ -14,7 +14,7 @@ export const TableViewRow = (props) => {
                     <DataCell key={column.field}>{election[column.field]}</DataCell>
                 );
             })}
-            <DataCell><button type="button" onClick={() => onActionSubmit(election.id)} >Cast Vote</button></DataCell>
+            <DataCell><button type="button" onClick={() => onActionSubmit(election)} >Cast Vote</button></DataCell>
         </tr>
     )
 }

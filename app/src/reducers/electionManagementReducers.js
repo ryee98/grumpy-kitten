@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 
 import {REFRESH_ELECTIONS_DONE, } from '../actions/electionManagementActions';
 
-import {CAST_VOTE_ELECTION_ACTION } from '../actions/castVoteManagementActions';
+import {CAST_VOTE_SELECTED_ELECTION_ACTION } from '../actions/castVoteManagementActions';
 
 export const electionsReducer = (elections = [], action) => {
     console.log('electionsReducer', action.type, elections);
@@ -13,12 +13,12 @@ export const electionsReducer = (elections = [], action) => {
     return elections;
 };
 
-export const castELectionVoteIdReducer = (castElectionVoteId = -1, action) => {
+export const castVoteSelectedElectionReducer = (castVoteSelectedElection = {}, action) => {
 
-    if (action.type === CAST_VOTE_ELECTION_ACTION) {
-      return action.castElectionVoteId;
+    if (action.type === CAST_VOTE_SELECTED_ELECTION_ACTION) {
+      return action.selectedElection;
     } else{
-        return -1
+        return null
     }
   
     // if ([
@@ -28,12 +28,12 @@ export const castELectionVoteIdReducer = (castElectionVoteId = -1, action) => {
     //   return -1;
     // }
   
-    return castElectionVoteId;
+    return castVoteSelectedElection;
   
   };
 
 export const votingSystemReducer = combineReducers({
-    castElectionVoteId: castELectionVoteIdReducer,
+    castVoteSelectedElection: castVoteSelectedElectionReducer,
     elections: electionsReducer,
 });
 
