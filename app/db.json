@@ -13,18 +13,6 @@
       "electionsVoted": []
     },
     {
-      "id": 3,
-      "firstName": "Joe",
-      "lastName": "Don",
-      "street": "Street 3",
-      "county": "County 3",
-      "city": "City 3",
-      "dob": "01/01/1985",
-      "email": "abcde@grumpy.com",
-      "phone": "7141233456",
-      "electionsVoted": []
-    },
-    {
       "firstName": "Sree",
       "lastName": "Th",
       "street": "Patterson",
