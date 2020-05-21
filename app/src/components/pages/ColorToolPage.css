@@ -1,0 +1,12 @@
+label {
+    margin: 3px;
+    margin-right: 5px;
+}
+
+#color-form div {
+    padding: 5px;
+}
+
+#color-form label {
+    width: 100px;
+}
