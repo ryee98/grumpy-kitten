@@ -35,6 +35,39 @@
       "email": "abcde@grumpy.com",
       "phone": "7141233456",
       "electionsVoted": []
+    },
+    {
+      "firstName": "Sree",
+      "lastName": "Th",
+      "street": "Patterson",
+      "city": "Santa Barbara",
+      "county": "Santa Barbara",
+      "dob": "01/01/1990",
+      "email": "sree@grumpy.com",
+      "phone": "805-555-5555",
+      "id": 11
+    },
+    {
+      "firstName": "Shal",
+      "lastName": "Grassi",
+      "street": "garcia ave",
+      "city": "Mtn View",
+      "county": "Santa Clara",
+      "dob": "01/01/2020",
+      "email": "shal@grumpy.com",
+      "phone": "650-111-1111",
+      "id": 12
+    },
+    {
+      "firstName": "Richard",
+      "lastName": "Yee",
+      "street": "address1",
+      "city": "Palo Alto",
+      "county": "Santa Clara",
+      "dob": "01/01/1990",
+      "email": "richard@grumpy.com",
+      "phone": "650-444-4444",
+      "id": 13
     }
   ],
   "ballots": [
@@ -42,8 +75,9 @@
       "id": 1,
       "voterId": 1,
       "electionName": "Election1",
-      "voterReponse": [false, true]
-
+      "voterReponse": [
+        false
+      ]
     }
   ],
   "elections": [
@@ -70,18 +104,11 @@
       "ballotItem": "qqq"
     },
     {
-      "id": 4,
-      "name": "Election 3",
-      "ballotItem": "sss"
-    },
-    {
       "id": 5,
       "name": "Election 33",
       "ballotItem": "",
       "ballotItems": [
-        "VVVV",
-        "",
-        ""
+        "VVVV"
       ]
     }
   ]

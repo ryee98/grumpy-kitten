@@ -25,12 +25,10 @@ export const createEditVoterAction = voterId =>
 export const createCancelVoterAction = () =>
   ({ type: CANCEL_VOTER_ACTION });
 
-const VOTERS_ENDPOINT = 'http://localhost:3060/voters';
+const VOTERS_ENDPOINT = 'http://localhost:3060/voters/';
 
 export const refreshVoters = () => {
-  console.log('refresh voters');
   return dispatch => {
-      console.log('before dispatch');
       dispatch(createRefreshVotersRequestAction());
       return fetch(VOTERS_ENDPOINT)
           .then(resp => resp.json())
@@ -38,3 +36,24 @@ export const refreshVoters = () => {
   };
 };
 
+export const addVoter = voter => {
+  return dispatch => {
+    dispatch(createAddVoterRequestAction(voter));
+    return fetch(VOTERS_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(voter),
+    })
+      .then(() => dispatch(refreshVoters()));
+  };
+};
+
+export const deleteVoter = voterId => {
+  return dispatch => {
+    dispatch(createDeleteVoterRequestAction(voterId));
+    return fetch(VOTERS_ENDPOINT + encodeURIComponent(voterId), {
+      method: 'DELETE',
+    })
+      .then(() => dispatch(refreshVoters()));
+  };
+};
