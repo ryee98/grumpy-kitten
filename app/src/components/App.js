@@ -4,7 +4,12 @@ import {
     Switch, Route,
 } from 'react-router-dom';
 
+import { Provider } from 'react-redux';
+
 import { PageLayout } from './blocks/PageLayout';
+import { Sidebar } from './blocks/Sidebar';
+import { Content } from './blocks/Content';
+import { PageFooter } from './PageFooter';
 import { PageHeader } from './PageHeader';
 import { MainMenu } from './MainMenu';
 import { HomePage } from './pages/HomePage';
@@ -13,10 +18,7 @@ import { ElectionManagementPageContainer } from './containers/ElectionManagement
 import { VoterRegistrationPageContainer } from './containers/VoterRegistrationPageContainer';
 
 import { votingSystemStore } from '../stores/electionSystemStore';
-import { Sidebar } from './blocks/Sidebar';
-import { PageFooter } from './PageFooter';
-import { Content } from './blocks/Content';
-import { Provider } from 'react-redux';
+import { voterStore } from '../stores/voterStore';
 
 export const App = () => {
     return (
@@ -36,8 +38,8 @@ export const App = () => {
                         <ElectionManagementPageContainer />
                         </Provider>
                     </Route>
-                    <Route path="/voter-reg" exact>
-                        <Provider store={votingSystemStore}>
+                    <Route path="/voter_reg" exact>
+                        <Provider store={voterStore}>
                             <VoterRegistrationPageContainer />
                         </Provider>
                     </Route>
@@ -47,7 +49,7 @@ export const App = () => {
                 <Route path="/election_mgmt" exact>
                     <Sidebar className="election-mgmt-page" />
                 </Route>
-                <Route path="/voter-reg" exact>
+                <Route path="/voter_reg" exact>
                     <Sidebar className="voter-reg-page" />
                 </Route>
                 <Route path="/" >
