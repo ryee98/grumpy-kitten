@@ -1,0 +1,5 @@
+.election-mgmt-page {
+    grid-area: sidebar;
+    background-image: url(../images/sidebar/electionManagement.png);
+    background-size: auto;
+  }

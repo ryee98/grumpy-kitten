@@ -5,12 +5,12 @@
 
   #election-table th {
     border: 1px solid grey;
-    width: 350px;
+    width: 100px;
     text-align: center;
     background-color: lightskyblue;
   }
 
-  #elecion-table td {
+  #elecion-table > td {
     border: 1px solid grey;
     text-align: center;
     vertical-align: middle;

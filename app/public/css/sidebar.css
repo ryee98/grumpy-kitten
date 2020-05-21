@@ -5,3 +5,9 @@
 #sidebar.about-page {
   background-image: url(../images/sidebar/about-sidebar.jpg);
 }
+
+.election-mgmt-page {
+  grid-area: sidebar;
+  background-image: url(../images/sidebar/electionManagement.png);
+  background-size: auto;
+}
