@@ -2,10 +2,15 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { useSelector, useDispatch } from 'react-redux';
 import { ElectionManagementPage } from '../pages/ElectionManagementPage';
+import { refreshElections } from '../../actions/electionManagementActions';
 
 export const ElectionManagementPageContainer = () => {
   
-    return <ElectionManagementPage />;
-  
+  const elections = useSelector(state => state.elections);
+  console.log('ElectionManagementPageContainer elections', elections);
+
+  const dispatchProps = bindActionCreators({
+    onRefreshElections: refreshElections,
+  })
+    return <ElectionManagementPage elections={elections}/>;
   };
-  

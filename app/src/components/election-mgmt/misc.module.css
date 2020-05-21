@@ -1,0 +1,16 @@
+.electionTableHeaderCell, .electionTableDataCell {
+
+    padding: 4px;
+    border: 1px solid black;
+  }
+
+ .electionTableHeaderCell {
+    background: lightgrey;
+ } 
+
+ .electionToolButton {
+    background-color: lightsteelblue;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 2px;
+ }

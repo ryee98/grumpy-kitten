@@ -1,17 +1,17 @@
 import React from 'react';
 
 import './ElectionManagementPage.css';
+import { ElectionTable } from '../election-mgmt/ElectionTable';
 
-export const ElectionManagementPage = () => {
-    return (
-        <>
+export const ElectionManagementPage = (props) => {
+    const {elections} = props;
+    return ( <>
             <header>
                 <h2>Election Management</h2>
             </header>
 
             <section>
-                <p>Welcome to the Cool Company!</p>
-                This company was founded in May 2020 during the Covid-19 pandemic. It was conceived as an exercise to show off the knowledge we gained during the first day of class.
+                <ElectionTable elections={elections}/>
             </section>
         </>
     );
