@@ -10,6 +10,8 @@ import { MainMenu } from './MainMenu';
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
 import { ElectionManagementPageContainer } from './containers/ElectionManagementPageContainer';
+import { VoterRegistrationPageContainer } from './containers/VoterRegistrationPageContainer';
+
 import { votingSystemStore } from '../stores/electionSystemStore';
 import { Sidebar } from './blocks/Sidebar';
 import { PageFooter } from './PageFooter';
@@ -33,6 +35,9 @@ export const App = () => {
                         <Provider store={votingSystemStore}>
                         <ElectionManagementPageContainer />
                         </Provider>
+                    </Route>
+                    <Route path="/voter-reg" exact>
+                        <VoterRegistrationPageContainer />
                     </Route>
                 </Switch>
             </Content>
