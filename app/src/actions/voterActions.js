@@ -57,3 +57,19 @@ export const deleteVoter = voterId => {
       .then(() => dispatch(refreshVoters()));
   };
 };
+
+export const saveVoter = voter => {
+  return dispatch => {
+    dispatch(createSaveVoterRequestAction(voter));
+    return fetch(VOTERS_ENDPOINT, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(voter),
+    })
+      .then(() => dispatch(refreshVoters()));
+  };
+};
+
+
+
+  

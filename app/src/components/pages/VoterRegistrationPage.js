@@ -12,7 +12,7 @@ export const VoterRegistrationPage = ({
   onSaveVoter: saveVoter,
   onDeleteVoter: deleteVoter,
   onEditVoter: editVoter,
-  onCancelEditVoter: cancelEditVoter,
+  onCancelVoter: cancelVoter,
   headerText,
 }) => {
 
@@ -28,7 +28,7 @@ export const VoterRegistrationPage = ({
       <ContentSection headerText="Registered Voter List">
         <VoterTable voters={voters} editVoterId={editVoterId}
           onEditVoter={editVoter} onDeleteVoter={deleteVoter}
-          onSaveVoter={saveVoter} onCancelEditVoter={cancelEditVoter} />
+          onSaveVoter={saveVoter} onCancelVoter={cancelVoter} />
       </ContentSection>
 
       <ContentSection headerText="Voter Registration Form">
