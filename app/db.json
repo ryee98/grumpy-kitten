@@ -1,31 +1,31 @@
 {
   "voters": [
-        {
-          "id":1,
-          "firstName": "Jabene",
-          "lastName": "Doe",
-          "street": "Street 1",
-          "county": "County 1",
-          "city": "City 1",
-          "dob": "01/01/1983",
-          "email": "abc@grumpy.com",
-          "phone": "7141233456",
-          "electionsVoted": []
-      },
-      {
-        "id":2,
-        "firstName": "Jab",
-        "lastName": "Does",
-        "street": "Street 2",
-        "county": "County 2",
-        "city": "City 2",
-        "dob": "01/01/1984",
-        "email": "abcd@grumpy.com",
-        "phone": "7141233456",
-        "electionsVoted": []
+    {
+      "id": 1,
+      "firstName": "Jabene",
+      "lastName": "Doe",
+      "street": "Street 1",
+      "county": "County 1",
+      "city": "City 1",
+      "dob": "01/01/1983",
+      "email": "abc@grumpy.com",
+      "phone": "7141233456",
+      "electionsVoted": []
     },
     {
-      "id":3,
+      "id": 2,
+      "firstName": "Jab",
+      "lastName": "Does",
+      "street": "Street 2",
+      "county": "County 2",
+      "city": "City 2",
+      "dob": "01/01/1984",
+      "email": "abcd@grumpy.com",
+      "phone": "7141233456",
+      "electionsVoted": []
+    },
+    {
+      "id": 3,
       "firstName": "Joe",
       "lastName": "Don",
       "street": "Street 3",
@@ -35,15 +35,100 @@
       "email": "abcde@grumpy.com",
       "phone": "7141233456",
       "electionsVoted": []
+    },
+    {
+      "make": "",
+      "model": "",
+      "year": "",
+      "color": "",
+      "price": "",
+      "id": 4
+    },
+    {
+      "make": "",
+      "model": "",
+      "year": "",
+      "color": "",
+      "price": "",
+      "id": 5
+    },
+    {
+      "make": "",
+      "model": "",
+      "year": "",
+      "color": "",
+      "price": "",
+      "firstname": "Deepti",
+      "lastname": "S",
+      "street": "Curlew Ct",
+      "city": "Foster city",
+      "county": "e",
+      "dob": "01/01/1990",
+      "email": "deepti@grumpy.com",
+      "phone": "650-999-9999",
+      "id": 6
+    },
+    {
+      "make": "",
+      "model": "",
+      "year": "",
+      "color": "",
+      "price": "",
+      "county": "o",
+      "city": "werewr",
+      "id": 7
+    },
+    {
+      "make": "",
+      "model": "",
+      "year": "",
+      "color": "",
+      "price": "",
+      "county": "o",
+      "city": "werewr",
+      "id": 8
+    },
+    {
+      "make": "",
+      "model": "",
+      "year": "",
+      "color": "",
+      "price": "",
+      "county": "t",
+      "city": "werewr",
+      "id": 9
+    },
+    {
+      "firstName": "wewe",
+      "lastName": "wrw",
+      "street": "werwe",
+      "city": "werwe",
+      "county": "werwe",
+      "dob": "234234",
+      "email": "454",
+      "phone": "32432432",
+      "id": 10
+    },
+    {
+      "firstName": "Sree",
+      "lastName": "Th",
+      "street": "Patterson",
+      "city": "Santa Barbara",
+      "county": "Santa Barbara",
+      "dob": "01/01/1990",
+      "email": "sree@grumpy.com",
+      "phone": "805-555-5555",
+      "id": 11
     }
   ],
-  "ballots" : [
+  "ballots": [
     {
       "id": 1,
       "voterId": 1,
       "electionName": "Election1",
-      "voterReponse": [false, true]
-
+      "voterReponse": [
+        false
+      ]
     }
   ],
   "Elections": [
@@ -54,27 +139,8 @@
         {
           "id": 1,
           "q": "do u like pasta"
-        },
-        {
-          "id": 2,
-          "q": "do u like pizza"
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "name": "Election2",
-      "questions": [
-        {
-          "id": 1,
-          "q": "do u like cat"
-        },
-        {
-          "id": 2,
-          "q": "do u like dog"
         }
       ]
     }
   ]
- 
 }

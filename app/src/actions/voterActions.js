@@ -28,9 +28,7 @@ export const createCancelVoterAction = () =>
 const VOTERS_ENDPOINT = 'http://localhost:3060/voters';
 
 export const refreshVoters = () => {
-  console.log('refresh voters');
   return dispatch => {
-      console.log('before dispatch');
       dispatch(createRefreshVotersRequestAction());
       return fetch(VOTERS_ENDPOINT)
           .then(resp => resp.json())
@@ -38,3 +36,28 @@ export const refreshVoters = () => {
   };
 };
 
+export const addVoter = voter => {
+  return dispatch => {
+    dispatch(createAddVoterRequestAction(voter));
+    return fetch(VOTERS_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(voter),
+    })
+      .then(() => dispatch(refreshVoters()));
+  };
+};
+
+// export const deleteColor = colorId => {
+
+//   return dispatch => {
+
+//     dispatch(createDeleteColorRequestAction(colorId));
+//     return fetch('http://localhost:3060/colors/' + encodeURIComponent(colorId), {
+//       method: 'DELETE',
+//     })
+//       .then(() => dispatch(refreshColors()));
+
+//   };
+
+// };

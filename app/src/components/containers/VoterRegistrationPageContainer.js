@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import {
     refreshVoters, 
-    // addVoter, saveVoter, deleteVoter,
+    addVoter, //saveVoter, deleteVoter,
     // createEditVoterAction, createCancelVoterAction
 } from '../../actions/voterActions';
   
@@ -17,7 +17,7 @@ export const VoterRegistrationPageContainer = () => {
 
   const dispatchProps = bindActionCreators({
     onRefreshVoters: refreshVoters,
-    // onAddVoter: addVoter,
+    onAddVoter: addVoter,
     // onSaveVoter: saveVoter,
     // onDeleteVoter: deleteVoter,
     // onEditVoter: createEditVoterAction,
