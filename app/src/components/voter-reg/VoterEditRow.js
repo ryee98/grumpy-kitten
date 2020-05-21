@@ -3,7 +3,7 @@ import React from 'react';
 import { DataCell } from './misc';
 import { useForm } from '../../hooks/useForm';
 
-export const VoterEditRow = ({ voter, onSaveVoter, onCancelEditVoter: cancelEditVoter }) => {
+export const VoterEditRow = ({ voter, onSaveVoter, onCancelVoter: cancelVoter }) => {
 
   const [ voterForm, change ] = useForm({
     ...voter
@@ -20,10 +20,10 @@ export const VoterEditRow = ({ voter, onSaveVoter, onCancelEditVoter: cancelEdit
     <tr>
       <DataCell>{voter.id}</DataCell>
       <DataCell>
-        <input type="text" id="fname-input" name="firstname" value={voterForm.firstName} onChange={change} />
+        <input type="text" id="fname-input" name="firstName" value={voterForm.firstName} onChange={change} />
       </DataCell>
       <DataCell>
-        <input type="text" id="lname-input" name="lastname" value={voterForm.lastName} onChange={change} />
+        <input type="text" id="lname-input" name="lastName" value={voterForm.lastName} onChange={change} />
       </DataCell>
       <DataCell>
         <input type="text" id="street-input" name="street" value={voterForm.street} onChange={change} />
@@ -32,7 +32,7 @@ export const VoterEditRow = ({ voter, onSaveVoter, onCancelEditVoter: cancelEdit
         <input type="text" id="city-input" name="city" value={voterForm.city} onChange={change} />
       </DataCell>
       <DataCell>
-        <input type="text" id="county-input" name="county" value={voterForm.price} onChange={change} />
+        <input type="text" id="county-input" name="county" value={voterForm.county} onChange={change} />
       </DataCell>
       <DataCell>
          <input type="text" id="dob-input" name="dob" value={voterForm.dob} onChange={change} />
@@ -47,7 +47,7 @@ export const VoterEditRow = ({ voter, onSaveVoter, onCancelEditVoter: cancelEdit
         <button type="button" onClick={saveVoter}>
           Save
         </button>
-        <button type="button" onClick={cancelEditVoter}>
+        <button type="button" onClick={cancelVoter}>
           Cancel
         </button>
       </DataCell>
