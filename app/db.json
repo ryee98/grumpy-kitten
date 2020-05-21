@@ -1,31 +1,46 @@
 {
-  "colors": [
-    {
-      "id": 1,
-      "name": "red",
-      "hexcode": "#ff0000"
+  "voters": [
+        {
+          "id":1,
+          "firstName": "Jabene",
+          "lastName": "Doe",
+          "street": "Street 1",
+          "county": "County 1",
+          "city": "City 1",
+          "Dob": "01/01/1983",
+          "Email": "abc@grumpy.com",
+          "phone": "7141233456",
+          "ElectionsVoted": []
+      },
+      {
+        "id":2,
+        "firstName": "Jab",
+        "lastName": "Does",
+        "street": "Street 2",
+        "county": "County 2",
+        "city": "City 2",
+        "Dob": "01/01/1984",
+        "Email": "abcd@grumpy.com",
+        "phone": "7141233456",
+        "ElectionsVoted": []
     },
     {
-      "id": 2,
-      "name": "green",
-      "hexcode": "#00ff00"
-    },
-    {
-      "id": 3,
-      "name": "blue",
-      "hexcode": "#0000ff"
-    },
-    {
-      "name": "purple",
-      "hexcode": "#FF00FF",
-      "id": 4
-    },
-    {
-      "name": "purple",
-      "hexcode": "#FF00FF",
-      "id": 5
+      "id":3,
+      "firstName": "Joe",
+      "lastName": "Don",
+      "street": "Street 3",
+      "county": "County 3",
+      "city": "City 3",
+      "Dob": "01/01/1985",
+      "Email": "abcde@grumpy.com",
+      "phone": "7141233456",
+      "electionsVoted": []
     }
   ],
+
+
+
+ 
   "cars": [
     {
       "make": "Maserati",
