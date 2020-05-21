@@ -10,7 +10,7 @@ export const ElectionForm = (props) => {
     });
 
     const submitElection = () => {
-        onSubmitElection({...electionForm});
+        onSubmitElection({...electionForm, ballotItems: electionQuestions});
         resetElectionForm();
     };
 
@@ -34,7 +34,9 @@ export const ElectionForm = (props) => {
         </div>
         <div>
             <ol>
-            
+            {electionQuestions.map((question,i) => {
+                return <li key={i}>{question}</li>
+            })}
             </ol>
         </div>
         <div>
