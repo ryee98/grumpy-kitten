@@ -8,7 +8,7 @@ import { PageLayout } from './blocks/PageLayout';
 import { PageHeader } from './PageHeader';
 import { MainMenu } from './MainMenu';
 import { HomePage } from './pages/HomePage';
-import { AboutPage } from './pages/AboutPage';
+import { CastVotePageContainer } from './containers/CastVotePageContainer';
 import { ElectionManagementPageContainer } from './containers/ElectionManagementPageContainer';
 import { VoterRegistrationPageContainer } from './containers/VoterRegistrationPageContainer';
 
@@ -28,12 +28,14 @@ export const App = () => {
                     <Route path="/" exact>
                         <HomePage />
                     </Route>
-                    <Route path="/about" exact>
-                        <AboutPage />
+                    <Route path="/cast-vote" exact>
+                        <Provider store={votingSystemStore}>
+                            <CastVotePageContainer />
+                        </Provider>
                     </Route>
                     <Route path="/election_mgmt" exact>
                         <Provider store={votingSystemStore}>
-                        <ElectionManagementPageContainer />
+                        <   ElectionManagementPageContainer />
                         </Provider>
                     </Route>
                     <Route path="/voter-reg" exact>
