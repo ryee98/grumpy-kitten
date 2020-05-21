@@ -1,0 +1,93 @@
+{
+  "colors": [
+    {
+      "id": 1,
+      "name": "red",
+      "hexcode": "#ff0000"
+    },
+    {
+      "id": 2,
+      "name": "green",
+      "hexcode": "#00ff00"
+    },
+    {
+      "id": 3,
+      "name": "blue",
+      "hexcode": "#0000ff"
+    },
+    {
+      "name": "purple",
+      "hexcode": "#FF00FF",
+      "id": 4
+    },
+    {
+      "name": "purple",
+      "hexcode": "#FF00FF",
+      "id": 5
+    }
+  ],
+  "cars": [
+    {
+      "make": "Maserati",
+      "model": "Biturbo",
+      "year": 1990,
+      "color": "grey",
+      "price": 50000,
+      "id": 2
+    },
+    {
+      "make": "Tesla",
+      "model": "X",
+      "year": 2020,
+      "color": "black",
+      "price": 10000.99,
+      "id": 4
+    },
+    {
+      "make": "Tesla",
+      "model": "Modena",
+      "year": 2020,
+      "color": "Blue",
+      "price": 80000,
+      "id": 6
+    }
+  ],
+  "widgets": [
+    {
+      "id": 1,
+      "name": "Widget A",
+      "description": "Small, Red Widget",
+      "color": "red",
+      "size": "small",
+      "price": 10,
+      "quantity": 99
+    },
+    {
+      "id": 2,
+      "name": "Widget B",
+      "description": "Medium, Blue Widget",
+      "color": "blue",
+      "size": "medium",
+      "price": 5,
+      "quantity": 50
+    },
+    {
+      "id": 3,
+      "name": "Widget C",
+      "description": "Large, Yellow Widget",
+      "color": "yellow",
+      "size": "large",
+      "price": 15,
+      "quantity": 75
+    },
+    {
+      "id": 4,
+      "name": "Widget D",
+      "description": "Medium, Red Widget",
+      "color": "red",
+      "size": "medium",
+      "price": 20,
+      "quantity": 21
+    }
+  ]
+}
