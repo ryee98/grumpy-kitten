@@ -7,10 +7,10 @@
           "street": "Street 1",
           "county": "County 1",
           "city": "City 1",
-          "Dob": "01/01/1983",
-          "Email": "abc@grumpy.com",
+          "dob": "01/01/1983",
+          "email": "abc@grumpy.com",
           "phone": "7141233456",
-          "ElectionsVoted": []
+          "electionsVoted": []
       },
       {
         "id":2,
@@ -19,10 +19,10 @@
         "street": "Street 2",
         "county": "County 2",
         "city": "City 2",
-        "Dob": "01/01/1984",
-        "Email": "abcd@grumpy.com",
+        "dob": "01/01/1984",
+        "email": "abcd@grumpy.com",
         "phone": "7141233456",
-        "ElectionsVoted": []
+        "electionsVoted": []
     },
     {
       "id":3,
@@ -31,8 +31,8 @@
       "street": "Street 3",
       "county": "County 3",
       "city": "City 3",
-      "Dob": "01/01/1985",
-      "Email": "abcde@grumpy.com",
+      "dob": "01/01/1985",
+      "email": "abcde@grumpy.com",
       "phone": "7141233456",
       "electionsVoted": []
     }

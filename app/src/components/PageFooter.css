@@ -1,8 +1,8 @@
 
   #page-footer {
     grid-area: footer;
-    background-color: navy;
-    color: white;
+    background-color: #4AAFE7;
+    color: rgb(80, 77, 77);
     text-align: center;
     padding-top: 20px;
   }
