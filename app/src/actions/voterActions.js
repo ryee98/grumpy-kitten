@@ -7,6 +7,7 @@ export const DELETE_VOTER_REQUEST_ACTION = 'DELETE_VOTER_REQUEST';
 
 export const EDIT_VOTER_ACTION = 'EDIT_VOTER';
 export const CANCEL_VOTER_ACTION = 'CANCEL_VOTER';
+export const SORT_VOTER_ACTION = 'SORT_VOTER';
 
 export const createRefreshVotersRequestAction = () =>
   ({ type: REFRESH_VOTERS_REQUEST_ACTION });
@@ -24,6 +25,8 @@ export const createEditVoterAction = voterId =>
   ({ type: EDIT_VOTER_ACTION, voterId });
 export const createCancelVoterAction = () =>
   ({ type: CANCEL_VOTER_ACTION });
+export const createSortVoterAction = (sortColumnId) =>
+  ({ type:SORT_VOTER_ACTION, sortColumnId});
 
 const VOTERS_ENDPOINT = 'http://localhost:3060/voters/';
 

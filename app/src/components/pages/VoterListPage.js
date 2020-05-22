@@ -9,7 +9,7 @@ export const VoterListPage = ({
   onRefreshVoters: refreshVoters,
   onSaveVoter: saveVoter,
   onDeleteVoter: deleteVoter,
-  onEditVoter: editVoter,
+  onEditVoter: editVoter, onSort,
   onCancelVoter: cancelVoter,
   headerText,
 }) => {
@@ -26,7 +26,8 @@ export const VoterListPage = ({
       <ContentSection headerText="Registered Voter List">
         <VoterTable voters={voters} editVoterId={editVoterId}
           onEditVoter={editVoter} onDeleteVoter={deleteVoter}
-          onSaveVoter={saveVoter} onCancelVoter={cancelVoter} />
+          onSaveVoter={saveVoter} onCancelVoter={cancelVoter}
+          sortVoter={onSort} />
       </ContentSection>
     </>
   );
