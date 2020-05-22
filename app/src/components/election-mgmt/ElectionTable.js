@@ -60,11 +60,16 @@ export const ElectionTable = (props) => {
             {electionResults.electionName !== '' && 
             <div className="election-results">
             <h1>{electionResults.electionName}</h1>
-            <ul>
+            <table>
+                <thead>
+                    <tr><th>Question</th><th>Yes</th><th>No</th></tr>
+                </thead>
+            <tbody>
                 {electionResults.questions.map((item,index) => {
-                    return <li key={index}>{item.question} Yes: {item.y} No: {electionResults.responseCount - item.y}</li>
+                    return <tr key={index}><td>{item.question}</td><td>{item.y}</td><td>{electionResults.responseCount - item.y}</td></tr>
                 })}
-            </ul>
+                </tbody>
+            </table>
             </div>}
         </div>
     );
