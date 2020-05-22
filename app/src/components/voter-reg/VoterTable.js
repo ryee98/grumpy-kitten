@@ -9,15 +9,21 @@ export const VoterTable = (
     voters, editVoterId,
     onEditVoter: editVoter, onDeleteVoter: deleteVoter,
     onSaveVoter: saveVoter, onCancelVoter: cancelVoter,
+    sortVoter: onSortVoter,
   }) => {
+
+    const sortVoter = (sortColumn) => {
+      console.log('sortVoter', sortColumn);
+      onSortVoter(sortColumn);
+    };
 
   return (
     <table>
       <thead>
         <tr>
           <HeaderCell>Id</HeaderCell>
-          <HeaderCell>First Name</HeaderCell>
-          <HeaderCell>Last Name</HeaderCell>
+          <HeaderCell onClick={() => sortVoter("FIRST_NAME")}>First Name</HeaderCell>
+          <HeaderCell onClick={() => sortVoter("LAST_NAME")}>Last Name</HeaderCell>
           <HeaderCell>Address</HeaderCell>
           <HeaderCell>City</HeaderCell>
           <HeaderCell>County</HeaderCell>
