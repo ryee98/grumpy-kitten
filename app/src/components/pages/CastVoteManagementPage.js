@@ -4,6 +4,8 @@ import {Table} from "../common/Table";
 import {CastVoteBallotForm} from "../castVote/CastVoteBallotForm";
 import {CastVoteBalletUserNameForm} from "../castVote/CastVoteBalletUserNameForm";
 
+import {ErrorPage} from "../pages/ErrorPage";
+
 
 export const CastVoteManagementPage =  (props) => {
     const {
@@ -30,6 +32,12 @@ export const CastVoteManagementPage =  (props) => {
         onCastElectionVote(election);
     };
 
+    const errorMessages = [
+        "You are not registered. Please Register to vote",
+        "You have already voted for this Eelection"
+    ];
+    
+
     const onUserNameSubmit = (email)  => {
         let userExist = voters.filter(v => {
             return v.email === email
@@ -42,9 +50,15 @@ export const CastVoteManagementPage =  (props) => {
             if(hasUserVoted.length > 0) {
                 onCastVoteStep(castVoteStep + 1);
             } else {
-                onCastVoteStep(0);
+                onCastVoteStep(-2);
             } 
+        } else {
+            onCastVoteStep(-1);
         }
+    }
+
+    const cancelUserNameSubmit = (email)  => {
+        onCastVoteStep(0); 
     }
 
 
@@ -55,13 +69,13 @@ export const CastVoteManagementPage =  (props) => {
         if(castVoteStep === 0) {
             view = <Table elections={elections} onActionSubmit={displayCastVotePage} />;
         } else if (castVoteStep === 1) {
-            view = <CastVoteBalletUserNameForm onUserNameSubmit={onUserNameSubmit} buttonText="Enter UserName"/>;
+            view = <CastVoteBalletUserNameForm onUserNameSubmit={onUserNameSubmit} buttonText="Enter UserName" onCancelUserNameSubmit={cancelUserNameSubmit} />;
         }  else if (castVoteStep === 2) {
             view = <CastVoteBallotForm  voters={voters} buttonText='Cast Vote' electionSelectedForVote={castVoteSelectedElection}/>
-        }   else if (castVoteStep > 3) {
-            view =  "<div id='error'>You cannot vote</div>";
-        } else {
-            view = <Table elections={elections} onActionSubmit={displayCastVotePage} />;
+        }   else if (castVoteStep === -1) {
+            view =  <ErrorPage message={errorMessages[0]} />
+        } else if (castVoteStep === -2) {
+            view =  <ErrorPage message={errorMessages[1]} />
         }
 
         return view;
