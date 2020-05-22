@@ -3,7 +3,10 @@ import { combineReducers } from 'redux';
 import {REFRESH_ELECTIONS_DONE, SAVE_QUESTIONS_ACTION} from '../actions/electionManagementActions';
 import {REFRESH_BALLOTS_DONE } from '../actions/ballotManagementActions';
 import {REFRESH_VOTERS_DONE_ACTION, EDIT_VOTER_ACTION, CANCEL_VOTER_ACTION} from '../actions/voterActions';
-import {CAST_VOTE_SELECTED_ELECTION_ACTION, CAST_VOTE_STEP_ACTION } from '../actions/castVoteManagementActions';
+import {CAST_VOTE_SELECTED_ELECTION_ACTION, 
+  CAST_VOTE_STEP_ACTION,
+  USER_SELECTED_ACTION
+ } from '../actions/castVoteManagementActions';
 
 
 export const ballotsReducer = (ballots = [], action) => {
@@ -73,6 +76,15 @@ export const castVoteSelectedElectionReducer = (castVoteSelectedElection = {}, a
     return step
   };
 
+  export const userActiveIdReducer = (userActiveId = 0, action) => {
+
+    if (action.type === USER_SELECTED_ACTION) {
+        return action.userActiveId;
+    }
+    
+    return userActiveId
+  };
+
 export const votingSystemReducer = combineReducers({
     ballots: ballotsReducer,
     castVoteSelectedElection: castVoteSelectedElectionReducer,
@@ -80,6 +92,7 @@ export const votingSystemReducer = combineReducers({
     electionQuestions: electionQuestionReducer,
     voters: votersReducer,
     editVoterId: editVoterIdReducer,
-    castVoteStep: castVoteStepReducer
+    castVoteStep: castVoteStepReducer,
+    userActiveId: userActiveIdReducer
 });
 
