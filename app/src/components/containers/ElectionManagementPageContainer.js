@@ -17,5 +17,5 @@ export const ElectionManagementPageContainer = () => {
     onRefreshBallots: refreshBallots,
   }, useDispatch());
 
-    return <ElectionManagementPage {...dispatchProps} elections={elections} ballots={ballots} electionQuestions={electionQuestions}/>;
+    return <ElectionManagementPage {...dispatchProps} elections={elections} ballots={ballots} electionQuestions={electionQuestions} headerText={"Election Management"}/>;
   };
