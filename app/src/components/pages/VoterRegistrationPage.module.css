@@ -1,0 +1,14 @@
+label {
+  display: inline-block;
+  font-size: 14px;
+  margin: 5px;
+  width: 90px;
+}
+
+button {
+  margin: 20px;
+}
+
+.formContainer {
+  margin: 20px 10px 20px 5px;
+}

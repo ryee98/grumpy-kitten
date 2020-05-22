@@ -1,6 +1,7 @@
 
 #election-table table {
     border: 1px solid grey;
+    margin: 10px;
   }
 
   #election-table th {
@@ -15,4 +16,8 @@
     text-align: center;
     vertical-align: middle;
     padding: 3px;
+  }
+
+main > #content{
+    margin: 20x;
   }
