@@ -7,6 +7,10 @@ import {CastVoteBalletUserNameForm} from "../castVote/CastVoteBalletUserNameForm
 import {ErrorPage} from "../pages/ErrorPage";
 import {SuccessPage} from "../pages/SuccessPage";
 
+import './CastVoteManagementPage.css';
+import { SectionHeader } from '../blocks/SectionHeader';
+import { ContentSection } from '../blocks/ContentSection';
+
 
 export const CastVoteManagementPage =  (props) => {
     const {
@@ -107,8 +111,14 @@ export const CastVoteManagementPage =  (props) => {
         return view;
 
     }
-    return <>
+    return (<>
+
+        <SectionHeader headerText='Cast a Vote' />
+
+        <ContentSection headerText="Available Elections"></ContentSection>
+
       {displayView()}
    
     </>
+    )
 }
