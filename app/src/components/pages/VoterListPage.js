@@ -21,8 +21,7 @@ export const VoterListPage = ({
   return (
     <>
       <SectionHeader headerText={headerText} />
-      
-      <ContentSection>
+      <ContentSection headerText="Registered Voters">
         <VoterTable voters={voters} editVoterId={editVoterId}
           onEditVoter={editVoter} onDeleteVoter={deleteVoter}
           onSaveVoter={saveVoter} onCancelVoter={cancelVoter}
