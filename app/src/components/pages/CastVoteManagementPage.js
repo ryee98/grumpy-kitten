@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
 import {Table} from "../common/Table";
 import {CastVoteBallotForm} from "../castVote/CastVoteBallotForm";
@@ -71,13 +71,13 @@ export const CastVoteManagementPage =  (props) => {
         onCastVoteStep(0); 
     }
 
-    const castVoteSubmit = (ballotQuestionReponse) => {
+    const castVoteSubmit = (ballotQuestionResponse) => {
         let ballotToAdd =
             {
               "id": ballots.length + 1,
               "voterId": userActiveId,
               "electionName": castVoteSelectedElection.name,
-              "voterReponse": Object.values(ballotQuestionReponse)
+              "voterResponse": Object.values(ballotQuestionResponse)
             };
         onBallotAdd(ballotToAdd);
         onCastVoteStep(3);

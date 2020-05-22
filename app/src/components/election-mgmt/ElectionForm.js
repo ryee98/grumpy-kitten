@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 import { useForm } from '../../hooks/useForm';
 import './ElectionForm.css'
@@ -8,7 +8,6 @@ export const ElectionForm = (props) => {
     const [ electionForm, change, resetElectionForm] = useForm ({
         id:'', name:'', ballotItem: ''
     });
-    const [ ] = useState('ballotItem');
 
     const submitElection = () => {
         onSubmitElection({...electionForm, ballotItems: electionQuestions});
@@ -16,14 +15,13 @@ export const ElectionForm = (props) => {
     };
 
     const clearBallotItem = () => {
-        console.log('clearBallotItem', electionForm);
         change({target: {name: "ballotItem", value:""}});
-        console.log('after clearBallotItem', electionForm);
     }
 
     const submitBallotItem = () => {
         console.log('saveBallotItem', electionForm);
         onSubmitBallotItem(electionForm.ballotItem);
+        clearBallotItem();
     }
 
     const cancelElection = () => {

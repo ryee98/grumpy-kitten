@@ -5,11 +5,12 @@ import { ElectionTable } from '../election-mgmt/ElectionTable';
 import { ElectionForm} from '../election-mgmt/ElectionForm';
 
 export const ElectionManagementPage = (props) => {
-    const { onRefreshElections, onSubmitBallotItem, elections, electionQuestions, onSubmitElection, onUpdate, onCancel} = props;
+    const { elections, ballots, onRefreshElections, onSubmitBallotItem, onRefreshBallots, electionQuestions, onSubmitElection, onUpdate, onCancel} = props;
     console.log('onSubmitBallotItem', onSubmitBallotItem);
     useEffect(() => {
         console.log('useEffect refreshElections');
         onRefreshElections();
+        onRefreshBallots();
       }, []);
     
     return ( <>
@@ -18,7 +19,7 @@ export const ElectionManagementPage = (props) => {
             </header>
 
             <section>
-                <ElectionTable elections={elections}/>
+                <ElectionTable elections={elections} ballots={ballots}/>
             </section>
             
             <section>

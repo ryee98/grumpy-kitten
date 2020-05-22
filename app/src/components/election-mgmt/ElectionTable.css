@@ -21,3 +21,8 @@
     border-radius: 15px;
     background-color: lightblue;
   }
+
+  .view-cont {
+    display: flex
+  }
+  

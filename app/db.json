@@ -9,82 +9,103 @@
       "city": "City 1",
       "dob": "01/01/1983",
       "email": "abc@grumpy.com",
-      "phone": "7141233456"
+      "phone": "7141233456",
+      "electionsVoted": []
     },
     {
-      "firstName": "Sree",
-      "lastName": "Th",
-      "street": "Patterson",
-      "city": "Santa Barbara",
-      "county": "Santa Barbara",
-      "dob": "01/01/1990",
-      "email": "sree@grumpy.com",
-      "phone": "805-555-5555",
-      "id": 11
+      "id": 2,
+      "firstName": "Jab",
+      "lastName": "Does",
+      "street": "Street 2",
+      "county": "County 2",
+      "city": "City 2",
+      "dob": "01/01/1984",
+      "email": "abcd@grumpy.com",
+      "phone": "7141233456",
+      "electionsVoted": []
     },
     {
-      "firstName": "Shal",
-      "lastName": "Grassi",
-      "street": "garcia ave",
-      "city": "Mtn View",
-      "county": "Santa Clara",
-      "dob": "01/01/2020",
-      "email": "shal@grumpy.com",
-      "phone": "650-111-1111",
-      "id": 12
+      "firstName": "R",
+      "lastName": "Y",
+      "street": "101 Main St.",
+      "city": "Santa Cruz",
+      "county": "Santa Cruz",
+      "dob": "12/08/2000",
+      "email": "richard_yee@intuit.com",
+      "phone": "5551212",
+      "id": 4
     },
     {
-      "firstName": "Richard",
-      "lastName": "Yee",
-      "street": "address1",
-      "city": "Palo Alto",
-      "county": "Santa Clara",
-      "dob": "01/01/1990",
-      "email": "richard@grumpy.com",
-      "phone": "650-444-4444",
-      "id": 13
+      "firstName": "r",
+      "lastName": "r",
+      "street": "r",
+      "city": "r",
+      "county": "r",
+      "dob": "12/09/2000",
+      "email": "ryee_98@yahoo.com",
+      "phone": "5551212",
+      "id": 5
     },
     {
-      "firstName": "Mishu",
-      "lastName": "Bhat",
-      "street": "Xyz Ave",
-      "city": "San Francisco",
-      "county": "San Francisco",
-      "dob": "01/01/1995",
-      "email": "mishu@grumpy.com",
-      "phone": "415-333-3333",
-      "id": 14
-    },
-    {
-      "firstName": "Deepti",
-      "lastName": "Shatagopam",
-      "street": "Curlew Ct",
-      "city": "Foster City",
-      "county": "San Mateo",
-      "dob": "01/01/1990",
-      "email": "deepti@grumpy.com",
-      "phone": "650-222-8888",
-      "id": 15
+      "firstName": "2",
+      "lastName": "2",
+      "street": "2",
+      "city": "2",
+      "county": "2",
+      "dob": "12/09/2000",
+      "email": "richard.k.yee@gmail.com",
+      "phone": "1",
+      "id": 6
     }
   ],
   "ballots": [
     {
       "id": 1,
-      "voterId": 11,
-      "electionName": "My First Election",
-      "voterReponse": [
+      "voterId": 1,
+      "electionName": "Election1",
+      "voterResponse": [
+        false
+      ]
+    },
+    {
+      "id": 2,
+      "voterId": 4,
+      "electionName": "Election 2020",
+      "voterResponse": [
+        true,
+        true
+      ]
+    },
+    {
+      "id": 3,
+      "voterId": 5,
+      "electionName": "test",
+      "voterResponse": [
+        true,
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "id": 4,
+      "voterId": 6,
+      "electionName": "test",
+      "voterResponse": [
+        true,
         true,
         true,
         false
       ]
     },
     {
-      "id": 2,
-      "voterId": 1,
-      "electionName": "My First Election",
-      "voterReponse": [
+      "id": 5,
+      "voterId": 4,
+      "electionName": "test",
+      "voterResponse": [
         true,
-        false,
+        true,
+        true,
         false
       ]
     }
@@ -108,16 +129,48 @@
       ]
     },
     {
-      "id": 3,
-      "name": "Election 3",
-      "ballotItem": "qqq"
+      "id": 6,
+      "name": "Election 10",
+      "ballotItems": [
+        "Q1",
+        "Q2",
+        "Q3",
+        "Q4"
+      ]
     },
     {
-      "id": 5,
-      "name": "Election 33",
-      "ballotItem": "",
+      "id": 7,
+      "name": "Election 11",
       "ballotItems": [
-        "VVVV"
+        "Q1",
+        "Q2",
+        "Q3"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Election 2020",
+      "ballotItems": [
+        "Q1",
+        "Q2"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "test",
+      "ballotItems": [
+        "Q1",
+        "Q2",
+        "Q3",
+        "Q4"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Test 2",
+      "ballotItem": "Question 2",
+      "ballotItems": [
+        "Question 1"
       ]
     }
   ]

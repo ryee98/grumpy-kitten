@@ -3,9 +3,12 @@ import React from 'react';
 import {DataCell } from './misc';
 
 export const ElectionViewRow = (props) => {
-    const { election, config } = props;
+    const { election, electionResults, config } = props;
 
-    console.log('electionView');
+    const onViewResults = () => {
+        console.log('onViewElectionResults', election);
+        electionResults(election);
+    }
 
     return (
         
@@ -14,7 +17,7 @@ export const ElectionViewRow = (props) => {
             <DataCell key={column.field}>{election[column.field]}</DataCell>
             );
         })}
-        <DataCell><button>View Results</button></DataCell>
+        <DataCell><button onClick={onViewResults}>View Results</button></DataCell>
         </tr>
     )
 }
