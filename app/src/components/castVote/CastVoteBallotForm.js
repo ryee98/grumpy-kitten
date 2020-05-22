@@ -3,32 +3,29 @@ import React from 'react';
 import { useForm } from '../../hooks/useForm';
 import './CastVoteBalletForm.css';
 
-export const CastVoteBallotForm = ({buttonText, onSubmitCar, electionSelectedForVote}) => {
+export const CastVoteBallotForm = (props) => {
 
-    const [ castVoteBalletForm, change, resetCarForm] = useForm ({
-        ...electionSelectedForVote.questions
+    const {buttonText, onSubmitCar, electionSelectedForVote, voters} = props;
+
+    const [ castVoteBalletForm, change, resetCastVoteBalletForm,] = useForm ({
+        ballotItems:""
     });
 
     const submitCar = () => {
        // onSubmitCar({...castVoteBalletForm});
-        //resetCarForm();
+        //resetCastVoteBalletForm();
     };
 
     return (
         <form id="cast-vote-form">
-            {electionSelectedForVote.questions.map((question, i) => (
-            <div key={i}>
-            <label htmlFor="cast-vote-make-input">{question.q}:</label>
-            <input type="checkbox"  name={i} value="" onChange={change}/>
-            </div>
+            {electionSelectedForVote.ballotItems.map((ballot, i) => (
+                <div key={i}>
+                    <label htmlFor="cast-vote-make-input">{ballot}:</label>
+                    <input type="checkbox"  name="ballotItems" value={castVoteBalletForm.ballotItems} onChange={change}/>
+                </div>
             ))}
-        
             <div>
-                <button type="button" onClick={submitCar}>{buttonText}</button>
+            <button type="button" onClick={submitCar}>{buttonText}</button>
             </div>
         </form>);
-}
-
-CastVoteBallotForm.defaultProps = {
-    buttonText: 'Submit',
-}
+};

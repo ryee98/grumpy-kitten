@@ -72,7 +72,7 @@
     {
       "id": 1,
       "voterId": 1,
-      "electionName": "Election1",
+      "electionName": "My First Election",
       "voterReponse": [
         false
       ]
