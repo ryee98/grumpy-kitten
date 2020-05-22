@@ -57,14 +57,15 @@ export const ElectionTable = (props) => {
                     </tbody>
                 </table>
             </div>
-            <div>
+            {electionResults.electionName !== '' && 
+            <div className="election-results">
             <h1>{electionResults.electionName}</h1>
             <ul>
                 {electionResults.questions.map((item,index) => {
                     return <li key={index}>{item.question} Yes: {item.y} No: {electionResults.responseCount - item.y}</li>
                 })}
             </ul>
-            </div>
+            </div>}
         </div>
     );
 };

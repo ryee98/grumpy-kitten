@@ -1,4 +1,24 @@
 body {
     font-family: Arial;
-    
+
+}
+#content {
+    grid-area: content;
+  }
+
+.election-results  {
+    width: 300px;
+}
+
+
+.election-results h1, ul {
+    text-align: center;
+}
+
+.election-results h1 {
+    margin-top: 2em;
+}
+
+.election-results ul {
+    margin-top: 1em;
 }

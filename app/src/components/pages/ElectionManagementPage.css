@@ -1,13 +1,2 @@
-#content {
-    grid-area: content;
-  }
-  
-  #content > section {
-    padding: 10px;
-  }
-  
-  #content > section > p {
-    padding-bottom: 10px;
-  }
 
   
