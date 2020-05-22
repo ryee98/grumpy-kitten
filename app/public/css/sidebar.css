@@ -1,5 +1,5 @@
-#sidebar.home-page {
-  background-image: url(../images/sidebar/home-sidebar.jpg);
+.home-page {
+  background-image: url(../images/sidebar/electionManagement.png);
 }
 
 #sidebar.about-page {

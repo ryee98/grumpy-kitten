@@ -18,6 +18,7 @@ Once your app is large enough, you may want to move them into a separate module.
 export const REFRESH_ELECTIONS_REQUEST_ACTION = "REFRESH_ELECTIONS_REQUEST";
 export const REFRESH_ELECTIONS_DONE = "REFRESH_ELECTIONS_DONE";
 export const ADD_ELECTION_REQUEST_ACTION = "ADD_ELECTION_REQUEST";
+export const ADD_ELECTION_DONE_ACTION = "ADD_ELECTION_DONE";
 export const ADD_ELECTION_QUESTION_REQUEST_ACTION = "ADD_ELECTION_QUESTION_REQUEST";
 export const UPDATE_ELECTION_REQUEST_ACTION = "UPDATE_ELECTION_REQUEST";
 export const UPDATE_ELECTION_QUESTION_REQUEST_ACTION = "UPDATE_ELECTION_QUESTION_REQUEST";
@@ -27,16 +28,15 @@ const ELECTIONS_ENDPOINT = 'http://localhost:3060/elections';
 export const SAVE_QUESTIONS_ACTION = "SAVE_QUESTION";
 export const CANCEL_ELECTION_ACTION = 'CANCEL_ELECTION';
 export const CANCEL_ELECTION_QUESTION_ACTION = 'CANCEL_ELECTION_QUESTION';
-export const CREATE_ELECTION_ACTION = "CREATE_ELECTION_ACTION";
 
 export const createCancelAction = () => ({ type: CANCEL_ELECTION_ACTION });
 export const createCancelQuestionAction = () => ({ type: CANCEL_ELECTION_QUESTION_ACTION });
-export const createElectionAction = (createStatus) =>({ type: CREATE_ELECTION_ACTION, createStatus});
 
 export const createSaveQuestionAction = (question) => ({ type: SAVE_QUESTIONS_ACTION, question});
 export const createRefreshElectionsRequestAction = () => ({ type: REFRESH_ELECTIONS_REQUEST_ACTION });
 export const createRefreshElectionsDoneAction = (elections) => ({ type: REFRESH_ELECTIONS_DONE, elections });
 export const createAddElectionRequestAction = (election) => ({ type: ADD_ELECTION_REQUEST_ACTION, election });
+export const createAddElectionDoneAction = (election) => ({ type: ADD_ELECTION_DONE_ACTION, election });
 export const createUpdateElectionRequestAction = (election) => ({ type: UPDATE_ELECTION_REQUEST_ACTION, election });
 
 export const refreshElections = () => {

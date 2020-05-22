@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { bindActionCreators } from 'redux';
 import { useSelector, useDispatch } from 'react-redux';
 import { ElectionManagementPage } from '../pages/ElectionManagementPage';
-import { refreshElections, createSaveQuestionAction } from '../../actions/electionManagementActions';
+import { refreshElections, addElection, createSaveQuestionAction, createCancelAction } from '../../actions/electionManagementActions';
 
 export const ElectionManagementPageContainer = () => {
   const {elections, electionQuestions} = useSelector(state => state);
@@ -11,7 +11,8 @@ export const ElectionManagementPageContainer = () => {
   const dispatchProps = bindActionCreators({
     onRefreshElections: refreshElections,
     onSubmitBallotItem: createSaveQuestionAction,
-
+    onSubmitElection: addElection,
+    onCancel: createCancelAction,
   }, useDispatch());
 
     return <ElectionManagementPage {...dispatchProps} elections={elections} electionQuestions={electionQuestions}/>;
