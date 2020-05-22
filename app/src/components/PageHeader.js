@@ -10,6 +10,7 @@ export const PageHeader = () => {
                 <h1>
                         Grumpy Cat Electronic Voting System
                  </h1>
+                 <span>Grumpy Cats don’t fetch(), but we do!</span>
             </div>
         </header>
         );

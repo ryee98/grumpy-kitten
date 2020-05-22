@@ -27,7 +27,14 @@
   
   .header h1 {
     position: relative;
-    top: 12px;
     left: 10px;
+  }
+
+  .header span {
+    position: relative;
+    left: 10px;
+    top: 2px;
+    font-weight: bolder;
+    font-style: italic;
   }
   
