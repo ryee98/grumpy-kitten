@@ -13,7 +13,6 @@ export const VoterRegistrationPage = ({
 }) => {
 
    useEffect(() => {
-     console.log('useEffects')
      refreshVoters();
    }, []);
 
@@ -21,7 +20,7 @@ export const VoterRegistrationPage = ({
     <>
       <SectionHeader headerText={headerText} />
       
-      <ContentSection headerText="Voter Registration Form">
+      <ContentSection>
           <div className={voterRegPageStyles.formContainer}>
             <VoterForm buttonText="Complete Registration" onSubmitVoter={addVoter} />
          </div>

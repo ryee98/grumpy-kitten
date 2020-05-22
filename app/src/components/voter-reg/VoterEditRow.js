@@ -18,7 +18,9 @@ export const VoterEditRow = ({ voter, onSaveVoter, onCancelVoter: cancelVoter })
 
   return (
     <tr>
-      <DataCell>{voter.id}</DataCell>
+      <DataCell>
+        <input type="checkbox" id="id-input" name="id" value={voterForm.id} onChange={change} />
+      </DataCell>
       <DataCell>
         <input type="text" id="fname-input" name="firstName" value={voterForm.firstName} onChange={change} />
       </DataCell>

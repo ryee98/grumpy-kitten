@@ -15,7 +15,6 @@ export const VoterListPage = ({
 }) => {
 
    useEffect(() => {
-     console.log('useEffects')
      refreshVoters();
    }, []);
 
@@ -23,7 +22,7 @@ export const VoterListPage = ({
     <>
       <SectionHeader headerText={headerText} />
       
-      <ContentSection headerText="Registered Voter List">
+      <ContentSection>
         <VoterTable voters={voters} editVoterId={editVoterId}
           onEditVoter={editVoter} onDeleteVoter={deleteVoter}
           onSaveVoter={saveVoter} onCancelVoter={cancelVoter}

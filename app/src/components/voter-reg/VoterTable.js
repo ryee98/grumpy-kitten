@@ -21,7 +21,7 @@ export const VoterTable = (
     <table>
       <thead>
         <tr>
-          <HeaderCell>Id</HeaderCell>
+          <HeaderCell>Select</HeaderCell>
           <HeaderCell onClick={() => sortVoter("firstName")}>First Name</HeaderCell>
           <HeaderCell onClick={() => sortVoter("lastName")}>Last Name</HeaderCell>
           <HeaderCell onClick={() => sortVoter("address")}>Address</HeaderCell>
@@ -38,6 +38,10 @@ export const VoterTable = (
           ? <VoterEditRow key={voter.id} voter={voter} onSaveVoter={saveVoter} onCancelVoter={cancelVoter} />
           : <VoterViewRow key={voter.id} voter={voter} onEditVoter={editVoter} onDeleteVoter={deleteVoter} />)}
       </tbody>
+      <tr>
+        <button type="button"> Delete Selected </button>
+
+      </tr>
     </table>
   );
 

@@ -64,7 +64,7 @@ export const deleteVoter = voterId => {
 export const saveVoter = voter => {
   return dispatch => {
     dispatch(createSaveVoterRequestAction(voter));
-    return fetch(VOTERS_ENDPOINT, {
+    return fetch(VOTERS_ENDPOINT + '/' + encodeURIComponent(voter.id), {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(voter),
