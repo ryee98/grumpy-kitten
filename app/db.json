@@ -13,30 +13,6 @@
       "electionsVoted": []
     },
     {
-      "id": 2,
-      "firstName": "Jab",
-      "lastName": "Does",
-      "street": "Street 2",
-      "county": "County 2",
-      "city": "City 2",
-      "dob": "01/01/1984",
-      "email": "abcd@grumpy.com",
-      "phone": "7141233456",
-      "electionsVoted": []
-    },
-    {
-      "id": 3,
-      "firstName": "Joe",
-      "lastName": "Don",
-      "street": "Street 3",
-      "county": "County 3",
-      "city": "City 3",
-      "dob": "01/01/1985",
-      "email": "abcde@grumpy.com",
-      "phone": "7141233456",
-      "electionsVoted": []
-    },
-    {
       "firstName": "Sree",
       "lastName": "Th",
       "street": "Patterson",
@@ -68,13 +44,35 @@
       "email": "richard@grumpy.com",
       "phone": "650-444-4444",
       "id": 13
+    },
+    {
+      "firstName": "Mishu",
+      "lastName": "Bhat",
+      "street": "Xyz Ave",
+      "city": "San Francisco",
+      "county": "San Francisco",
+      "dob": "01/01/1995",
+      "email": "mishu@grumpy.com",
+      "phone": "415-333-3333",
+      "id": 14
+    },
+    {
+      "firstName": "Deepti",
+      "lastName": "Shatagopam",
+      "street": "Curlew Ct",
+      "city": "Foster City",
+      "county": "San Mateo",
+      "dob": "01/01/1990",
+      "email": "deepti@grumpy.com",
+      "phone": "650-222-8888",
+      "id": 15
     }
   ],
   "ballots": [
     {
       "id": 1,
       "voterId": 1,
-      "electionName": "Election1",
+      "electionName": "My First Election",
       "voterReponse": [
         false
       ]

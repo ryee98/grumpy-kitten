@@ -16,6 +16,7 @@ import { HomePage } from './pages/HomePage';
 import { CastVotePageContainer } from './containers/CastVotePageContainer';
 import { ElectionManagementPageContainer } from './containers/ElectionManagementPageContainer';
 import { VoterRegistrationPageContainer } from './containers/VoterRegistrationPageContainer';
+import { VoterListPageContainer } from './containers/VoterListPageContainer';
 
 import { votingSystemStore } from '../stores/electionSystemStore';
 import { voterStore } from '../stores/voterStore';
@@ -37,12 +38,17 @@ export const App = () => {
                     </Route>
                     <Route path="/election_mgmt" exact>
                         <Provider store={votingSystemStore}>
-                        <   ElectionManagementPageContainer />
+                            <ElectionManagementPageContainer />
                         </Provider>
                     </Route>
                     <Route path="/voter_reg" exact>
-                        <Provider store={voterStore}>
+                        <Provider store={votingSystemStore}>
                             <VoterRegistrationPageContainer />
+                        </Provider>
+                    </Route>
+                    <Route path="/voter_list" exact>
+                        <Provider store={votingSystemStore}>
+                            <VoterListPageContainer />
                         </Provider>
                     </Route>
                 </Switch>
@@ -53,6 +59,9 @@ export const App = () => {
                 </Route>
                 <Route path="/voter_reg" exact>
                     <Sidebar className="voter-reg-page" />
+                </Route>
+                <Route path="/voter_list" exact>
+                    <Sidebar className="voter-list-page" />
                 </Route>
                 <Route path="/" >
                     <Sidebar className="home-page" />

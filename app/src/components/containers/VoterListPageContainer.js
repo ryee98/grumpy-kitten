@@ -4,27 +4,32 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import {
     refreshVoters, 
-    addVoter, 
+    saveVoter, 
+    deleteVoter,
+    createEditVoterAction, createCancelVoterAction
 } from '../../actions/voterActions';
   
-import { VoterRegistrationPage } from '../pages/VoterRegistrationPage';
+import { VoterListPage } from '../pages/VoterListPage';
   
-export const VoterRegistrationPageContainer = () => {
+export const VoterListPageContainer = () => {
 
   const voters = useSelector(state => state.voters);
   const editVoterId = useSelector(state => state.editVoterId);
 
   const dispatchProps = bindActionCreators({
     onRefreshVoters: refreshVoters,
-    onAddVoter: addVoter,
+    onSaveVoter: saveVoter,
+    onDeleteVoter: deleteVoter,
+    onEditVoter: createEditVoterAction,
+    onCancelVoter: createCancelVoterAction,
   }, useDispatch());
 
 
-  return <VoterRegistrationPage
+  return <VoterListPage
     {...dispatchProps}
     voters={voters}
     editVoterId={editVoterId}
-    headerText="Voter Registration" />;
+    headerText="Voter List" />;
 };
 
 

@@ -7,9 +7,11 @@ export const MainMenu = () => {
 
   // ui model data
   const menuItems = [
+
     { id: 1, url: '/voter_reg', caption: 'Voters' },
-    { id: 2, url: '/election_mgmt', caption: 'Elections' },
-    { id: 3, url: '/cast-vote', caption: 'Cast Vote'}
+    { id: 2, url: '/voter_list', caption: 'Voter List' },
+    { id: 3, url: '/election_mgmt', caption: 'Elections' },
+    { id: 4, url: '/cast-vote', caption: 'Cast Vote'}
   ];
 
   return (

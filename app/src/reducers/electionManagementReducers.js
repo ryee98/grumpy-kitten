@@ -2,7 +2,8 @@ import { combineReducers } from 'redux';
 
 import {REFRESH_ELECTIONS_DONE, SAVE_QUESTIONS_ACTION, ADD_ELECTION_DONE_ACTION, CANCEL_ELECTION_ACTION} from '../actions/electionManagementActions';
 import {REFRESH_BALLOTS_DONE } from '../actions/ballotManagementActions';
-import {CAST_VOTE_SELECTED_ELECTION_ACTION } from '../actions/castVoteManagementActions';
+import {REFRESH_VOTERS_DONE_ACTION, EDIT_VOTER_ACTION, CANCEL_VOTER_ACTION} from '../actions/voterActions';
+import {CAST_VOTE_SELECTED_ELECTION_ACTION, CAST_VOTE_STEP_ACTION } from '../actions/castVoteManagementActions';
 
 
 export const ballotsReducer = (ballots = [], action) => {
@@ -43,10 +44,40 @@ export const castVoteSelectedElectionReducer = (castVoteSelectedElection = {}, a
 
     if (action.type === CAST_VOTE_SELECTED_ELECTION_ACTION) {
       return action.selectedElection;
-    } else{
-        return null
-    }
+    } 
     return castVoteSelectedElection;
+  };
+
+  export const votersReducer = (voters = [], action) => {
+  
+    if (action.type === REFRESH_VOTERS_DONE_ACTION) {
+      return action.voters;
+    }
+  
+    return voters;
+  };
+  
+  export const editVoterIdReducer = (editVoterId = -1, action) => {
+  
+    if (action.type === EDIT_VOTER_ACTION) {
+      return action.voterId;
+    }
+  
+    if (action.type === REFRESH_VOTERS_DONE_ACTION || action.type ===  CANCEL_VOTER_ACTION) {
+      return -1;
+    }
+  
+    return editVoterId;
+  
+  };
+  
+  export const castVoteStepReducer = (step = 0, action) => {
+
+    if (action.type === CAST_VOTE_STEP_ACTION) {
+        return action.step;
+    }
+    
+    return step
   };
 
 export const votingSystemReducer = combineReducers({
@@ -54,6 +85,8 @@ export const votingSystemReducer = combineReducers({
     castVoteSelectedElection: castVoteSelectedElectionReducer,
     elections: electionsReducer,
     electionQuestions: electionQuestionReducer,
-
+    voters: votersReducer,
+    editVoterId: editVoterIdReducer,
+    castVoteStep: castVoteStepReducer
 });
 

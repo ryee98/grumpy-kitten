@@ -1,0 +1,18 @@
+#cast-vote-form label {
+    width: 100px;
+    float: left;
+    margin-right: 15px;
+    text-align: right;
+}
+
+#cast-vote-form div {
+  padding-top: 10px;
+}
+
+#cast-vote-form input {
+  display: inline-block;
+}
+
+#cast-vote-form button {
+    border-radius: 10px;
+}
