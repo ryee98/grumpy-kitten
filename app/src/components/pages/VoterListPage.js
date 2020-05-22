@@ -3,7 +3,6 @@ import React, { useEffect } from 'react';
 import { SectionHeader } from '../blocks/SectionHeader';
 import { ContentSection } from '../blocks/ContentSection';
 import { VoterTable } from '../voter-reg/VoterTable';
-import { VoterForm } from '../voter-reg/VoterForm';
 
 export const VoterListPage = ({
   voters, editVoterId,

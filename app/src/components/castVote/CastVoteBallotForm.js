@@ -5,27 +5,34 @@ import './CastVoteBalletForm.css';
 
 export const CastVoteBallotForm = (props) => {
 
-    const {buttonText, onSubmitCar, electionSelectedForVote, voters} = props;
+    const {buttonText, castVoteSubmit, electionSelectedForVote, voters} = props;
 
-    const [ castVoteBalletForm, change, resetCastVoteBalletForm,] = useForm ({
-        ballotItems:""
+    let balletObject = {};
+    electionSelectedForVote.ballotItems.map((ballot, i) => {
+         balletObject["ballotItems"+i] = false;
     });
 
     const submitCar = () => {
-       // onSubmitCar({...castVoteBalletForm});
-        //resetCastVoteBalletForm();
+        console.log(balletObject)
+        castVoteSubmit(balletObject);
     };
 
-    return (
+    const captureChkBoxVal = (e) => {
+        balletObject[e.target.name]=e.target.checked;
+    }
+
+    return (<>
         <form id="cast-vote-form">
             {electionSelectedForVote.ballotItems.map((ballot, i) => (
+            
                 <div key={i}>
                     <label htmlFor="cast-vote-make-input">{ballot}:</label>
-                    <input type="checkbox"  name="ballotItems" value={castVoteBalletForm.ballotItems} onChange={change}/>
-                </div>
-            ))}
+                    <input type="checkbox"  name={"ballotItems"+i} onClick={captureChkBoxVal} />
+                </div>))}
             <div>
-            <button type="button" onClick={submitCar}>{buttonText}</button>
+                <button type="button" onClick={submitCar}>{buttonText}</button>
             </div>
-        </form>);
+        </form>
+    </>
+    );
 };

@@ -2,11 +2,13 @@
 
 import React from "react";
 
+import './SuccessPage.css';
+
 export const SuccessPage = (props) => {
     const {message} = props;
 
     return (<>
-        <div>{message}</div>
-        <button onClick="">Back to Home Page</button>
-        </>)
+        <div class="success">{message}</div>
+        <a class="success-link" href="http://localhost:3000/">Back to Home Page</a>
+    </>)
 }

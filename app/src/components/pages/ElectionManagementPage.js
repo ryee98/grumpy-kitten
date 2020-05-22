@@ -5,7 +5,7 @@ import { ElectionTable } from '../election-mgmt/ElectionTable';
 import { ElectionForm} from '../election-mgmt/ElectionForm';
 
 export const ElectionManagementPage = (props) => {
-    const { onRefreshElections, onSubmitBallotItem, elections, electionQuestions, onSave, onUpdate} = props;
+    const { onRefreshElections, onSubmitBallotItem, elections, electionQuestions, onSubmitElection, onUpdate, onCancel} = props;
     console.log('onSubmitBallotItem', onSubmitBallotItem);
     useEffect(() => {
         console.log('useEffect refreshElections');
@@ -23,7 +23,7 @@ export const ElectionManagementPage = (props) => {
             
             <section>
                 <p>Create New Election</p>
-                <ElectionForm onSubmitElection={onSave} electionQuestions={electionQuestions} onSubmitBallotItem={onSubmitBallotItem} onUpdateElection={onUpdate}  buttonText="Save Election"/>
+                <ElectionForm electionQuestions={electionQuestions} onSubmitElection={onSubmitElection} onCancel={onCancel} onSubmitBallotItem={onSubmitBallotItem} onUpdateElection={onUpdate}  buttonText="Save Election"/>
             </section>
         </>
     );

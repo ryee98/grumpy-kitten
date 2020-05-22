@@ -1,5 +1,5 @@
-#sidebar.home-page {
-  background-image: url(../images/sidebar/home-sidebar.jpg);
+.home-page {
+  background-image: url(../images/sidebar/electionManagement.png);
 }
 
 #sidebar.about-page {
@@ -20,6 +20,6 @@
 
 .voter-list-page {
   grid-area: sidebar;
-  background-image: url(../images/sidebar/register-vote.jpeg);
+  background-image: url(../images/sidebar/vote-matters.jpeg);
   background-size: auto;
 }

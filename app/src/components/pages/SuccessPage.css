@@ -1,0 +1,13 @@
+
+  .success {
+    color: green;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 20px;
+  }
+
+  .success-link {
+    color: blue;
+    font-size: 16px;
+    font-weight: 600;
+  }

@@ -1,10 +1,14 @@
 import { combineReducers } from 'redux';
 
-import {REFRESH_ELECTIONS_DONE, SAVE_QUESTIONS_ACTION} from '../actions/electionManagementActions';
+import {REFRESH_ELECTIONS_DONE, SAVE_QUESTIONS_ACTION, ADD_ELECTION_DONE_ACTION, CANCEL_ELECTION_ACTION} from '../actions/electionManagementActions';
 import {REFRESH_BALLOTS_DONE } from '../actions/ballotManagementActions';
+
 import {REFRESH_VOTERS_DONE_ACTION, EDIT_VOTER_ACTION, CANCEL_VOTER_ACTION,
-SORT_VOTER_ACTION} from '../actions/voterActions';
-import {CAST_VOTE_SELECTED_ELECTION_ACTION, CAST_VOTE_STEP_ACTION } from '../actions/castVoteManagementActions';
+    SORT_VOTER_ACTION} from '../actions/voterActions';
+import {CAST_VOTE_SELECTED_ELECTION_ACTION, 
+  CAST_VOTE_STEP_ACTION,
+  USER_SELECTED_ACTION
+ } from '../actions/castVoteManagementActions';
 
 export const ballotsReducer = (ballots = [], action) => {
     console.log('ballotsReducer', action.type, ballots);
@@ -29,6 +33,13 @@ export const electionQuestionReducer = (questions = [], action) => {
     if (SAVE_QUESTIONS_ACTION === action.type) {
         return questions.concat(action.question);
     };
+    if (ADD_ELECTION_DONE_ACTION === action.type) {
+        return []; // clear the old list of questions after an election save is performed
+    };
+
+    if (CANCEL_ELECTION_ACTION === action.type) {
+        return [];
+    };
 
     return questions;
 };
@@ -48,6 +59,15 @@ export const castVoteSelectedElectionReducer = (castVoteSelectedElection = {}, a
     }
 
     return voters;
+  };
+
+  export const votersSortReducer = (sortColumnId = '', action) => {
+
+    if (action.type === SORT_VOTER_ACTION) {
+      return action.sortColumnId;
+    }
+
+    return sortColumnId;
   };
   
   export const editVoterIdReducer = (editVoterId = -1, action) => {
@@ -73,6 +93,15 @@ export const castVoteSelectedElectionReducer = (castVoteSelectedElection = {}, a
     return step
   };
 
+  export const userActiveIdReducer = (userActiveId = 0, action) => {
+
+    if (action.type === USER_SELECTED_ACTION) {
+        return action.userActiveId;
+    }
+    
+    return userActiveId
+  };
+
 export const votingSystemReducer = combineReducers({
     ballots: ballotsReducer,
     castVoteSelectedElection: castVoteSelectedElectionReducer,
@@ -80,7 +109,8 @@ export const votingSystemReducer = combineReducers({
     electionQuestions: electionQuestionReducer,
     voters: votersReducer,
     editVoterId: editVoterIdReducer,
-    castVoteStep: castVoteStepReducer
-    
+    castVoteStep: castVoteStepReducer,
+    userActiveId: userActiveIdReducer,
+    sortColumnId: votersSortReducer,
 });
 

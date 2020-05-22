@@ -5,20 +5,24 @@ import {CastVoteBallotForm} from "../castVote/CastVoteBallotForm";
 import {CastVoteBalletUserNameForm} from "../castVote/CastVoteBalletUserNameForm";
 
 import {ErrorPage} from "../pages/ErrorPage";
+import {SuccessPage} from "../pages/SuccessPage";
 
 
 export const CastVoteManagementPage =  (props) => {
     const {
         onRefreshBallots, 
         onRefreshElections,
-        onRefreshVoters, 
+        onRefreshVoters,
+        onBallotAdd,
+        onUserActive,
         ballots,
         castVoteStep,
         voters,
         elections, 
         onCastElectionVote,
         onCastVoteStep,
-        castVoteSelectedElection
+        castVoteSelectedElection,
+        userActiveId
     } = props;
 
     useEffect(() => {
@@ -34,23 +38,25 @@ export const CastVoteManagementPage =  (props) => {
 
     const errorMessages = [
         "You are not registered. Please Register to vote",
-        "You have already voted for this Eelection"
+        "You have already voted for this Election."
     ];
     
 
     const onUserNameSubmit = (email)  => {
         let userExist = voters.filter(v => {
-            return v.email === email
+            return v.email === email;
         });
 
         if(userExist.length > 0) {
+
             let hasUserVoted = ballots.filter(ballot => {
                 return ballot.voterId === userExist[0].id && ballot.electionName === castVoteSelectedElection.name
             });
             if(hasUserVoted.length > 0) {
-                onCastVoteStep(castVoteStep + 1);
+                onCastVoteStep(-2); 
             } else {
-                onCastVoteStep(-2);
+                onUserActive(userExist[0].id);
+                onCastVoteStep(castVoteStep + 1);
             } 
         } else {
             onCastVoteStep(-1);
@@ -61,7 +67,17 @@ export const CastVoteManagementPage =  (props) => {
         onCastVoteStep(0); 
     }
 
-
+    const castVoteSubmit = (ballotQuestionReponse) => {
+        let ballotToAdd =
+            {
+              "id": ballots.length + 1,
+              "voterId": userActiveId,
+              "electionName": castVoteSelectedElection.name,
+              "voterReponse": Object.values(ballotQuestionReponse)
+            };
+        onBallotAdd(ballotToAdd);
+        onCastVoteStep(3);
+    };
 
     const displayView = () => {
         let view = "";
@@ -69,10 +85,20 @@ export const CastVoteManagementPage =  (props) => {
         if(castVoteStep === 0) {
             view = <Table elections={elections} onActionSubmit={displayCastVotePage} />;
         } else if (castVoteStep === 1) {
-            view = <CastVoteBalletUserNameForm onUserNameSubmit={onUserNameSubmit} buttonText="Enter UserName" onCancelUserNameSubmit={cancelUserNameSubmit} />;
+            view = <CastVoteBalletUserNameForm 
+                onUserNameSubmit={onUserNameSubmit} 
+                buttonText="Enter UserName" 
+                onCancelUserNameSubmit={cancelUserNameSubmit} 
+            />;
         }  else if (castVoteStep === 2) {
-            view = <CastVoteBallotForm  voters={voters} buttonText='Cast Vote' electionSelectedForVote={castVoteSelectedElection}/>
-        }   else if (castVoteStep === -1) {
+            view = <CastVoteBallotForm  
+                voters={voters} buttonText='Cast Vote' 
+                electionSelectedForVote={castVoteSelectedElection}
+                castVoteSubmit={castVoteSubmit}
+            />
+        }  else if (castVoteStep === 3) {
+            view =  <SuccessPage message="You have successfully voted!" />
+        } else if (castVoteStep === -1) {
             view =  <ErrorPage message={errorMessages[0]} />
         } else if (castVoteStep === -2) {
             view =  <ErrorPage message={errorMessages[1]} />
