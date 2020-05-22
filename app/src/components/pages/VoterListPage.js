@@ -15,7 +15,6 @@ export const VoterListPage = ({
 }) => {
 
    useEffect(() => {
-     console.log('useEffects')
      refreshVoters();
    }, []);
 
