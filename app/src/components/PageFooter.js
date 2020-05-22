@@ -6,7 +6,7 @@ export const PageFooter = () => {
 
     return (
         <footer id="page-footer">
-            <small>&copy;{new Date().getFullYear()} Grump Cat, Inc. All Rights Reserved.</small>
+            <small>&copy;{new Date().getFullYear()} Grumpy Cat, Inc. All Rights Reserved.</small>
         </footer>
     );
 };
