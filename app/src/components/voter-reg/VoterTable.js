@@ -22,13 +22,13 @@ export const VoterTable = (
       <thead>
         <tr>
           <HeaderCell>Id</HeaderCell>
-          <HeaderCell onClick={() => sortVoter("FIRST_NAME")}>First Name</HeaderCell>
-          <HeaderCell onClick={() => sortVoter("LAST_NAME")}>Last Name</HeaderCell>
-          <HeaderCell>Address</HeaderCell>
-          <HeaderCell>City</HeaderCell>
-          <HeaderCell>County</HeaderCell>
+          <HeaderCell onClick={() => sortVoter("firstName")}>First Name</HeaderCell>
+          <HeaderCell onClick={() => sortVoter("lastName")}>Last Name</HeaderCell>
+          <HeaderCell onClick={() => sortVoter("address")}>Address</HeaderCell>
+          <HeaderCell onClick={() => sortVoter("city")}>City</HeaderCell>
+          <HeaderCell onClick={() => sortVoter("county")}>County</HeaderCell>
           <HeaderCell>DOB (mm/dd/yyyy)</HeaderCell>
-          <HeaderCell>Email</HeaderCell>
+          <HeaderCell onClick={() => sortVoter("email")}>Email</HeaderCell>
           <HeaderCell>Phone</HeaderCell>
           <HeaderCell>Action</HeaderCell>
         </tr>

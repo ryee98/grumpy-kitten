@@ -42,25 +42,8 @@ export const VoterListPageContainer = () => {
           );
         };
       };
-    switch (state.sortColumnId) {
-      case FIRST_NAME:
-        const comparefn = (a, b) => {
-          console.log('a,b:', a, b);
-          const fn_a = a.firstName.toUpperCase();
-          const fn_b = b.firstName.toUpperCase();
-          return fn_a - fn_b;
-        }
-        return state.voters.slice().sort(compareValues('firstName'));
-      case LAST_NAME:
-        const compareln = (a, b) => {
-          const fn_a = a.lastName.toUpperCase();
-          const fn_b = b.lastName.toUpperCase();
-          return fn_a - fn_b;
-        }
-        return state.voters.slice().sort(compareValues('lastName'));
-      default:
-        return state.voters
-    }}
+      return state.voters.slice().sort(compareValues(state.sortColumnId));
+    };
     return state.voters;
   });
 
