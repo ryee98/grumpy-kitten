@@ -17,14 +17,13 @@ export const ElectionForm = (props) => {
 
     const clearBallotItem = () => {
         console.log('clearBallotItem', electionForm);
-        electionForm.ballotItem = '';
+        change({target: {name: "ballotItem", value:""}});
         console.log('after clearBallotItem', electionForm);
     }
 
     const submitBallotItem = () => {
         console.log('saveBallotItem', electionForm);
         onSubmitBallotItem(electionForm.ballotItem);
-        electionForm.ballotItem = '';
     }
 
     const cancelElection = () => {

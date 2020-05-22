@@ -4,6 +4,11 @@
     background-size: auto;
   }
 
+.home-page {
+  grid-area: sidebar;
+  background-image: url(../images/sidebar/electionManagement.png);
+  background-size: auto;
+}
 
 .voter-reg-page {
   grid-area: sidebar;
