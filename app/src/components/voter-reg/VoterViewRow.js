@@ -6,7 +6,9 @@ export const VoterViewRow = ({ voter, onEditVoter: editVoter, onDeleteVoter: del
 
   return (
     <tr>
-      <DataCell>{voter.id}</DataCell>
+      <DataCell>
+        <input type="checkbox" id="id-input" name="id" value={voter.id}/> 
+      </DataCell>
       <DataCell>{voter.firstName}</DataCell>
       <DataCell>{voter.lastName}</DataCell>
       <DataCell>{voter.street}</DataCell>
