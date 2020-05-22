@@ -15,7 +15,7 @@ const config = {
     export const Table = (props) => {
         const { elections, onActionSubmit} = props;
 
-        return (
+        return (<div className="table-class">
             <table id="election-table">
                 <thead>
                     <tr>
@@ -32,6 +32,6 @@ const config = {
                         <TableViewRow key={election.id} election={election} config={config} onActionSubmit={onActionSubmit}/>
                     )}
                 </tbody>
-            </table>
+            </table></div>
         );
     };
