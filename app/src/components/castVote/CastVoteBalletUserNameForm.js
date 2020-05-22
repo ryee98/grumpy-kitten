@@ -5,7 +5,7 @@ import './CastVoteBalletUserNameForm.css';
 
 export const CastVoteBalletUserNameForm = (props) => {
 
-    const {buttonText, onUserNameSubmit} = props;
+    const {buttonText, onUserNameSubmit, onCancelUserNameSubmit} = props;
 
     const [ castVoteUserNameForm, change, resetCastVoteForm] = useForm ({
         email : ""
@@ -27,6 +27,7 @@ export const CastVoteBalletUserNameForm = (props) => {
                 </div>
                 <div>
                     <button type="button" onClick={onSubmitUserName}>{buttonText}</button>
+                    <button type="button" onClick={() => onCancelUserNameSubmit()}>Cancel</button>
                 </div>
             </form>
         </div>
