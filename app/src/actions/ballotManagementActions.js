@@ -8,6 +8,7 @@ export const REFRESH_BALLOTS_DONE = "REFRESH_BALLOTS_DONE";
 export const createRefreshBallotsRequestAction = () => ({ type: REFRESH_BALLOTS_REQUEST_ACTION });
 export const createRefreshBallotsDoneAction = (ballots) => ({ type: REFRESH_BALLOTS_DONE, ballots });
 
+
 export const refreshBallots = () => {
     console.log('refresh ballots');
     return dispatch => {

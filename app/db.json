@@ -9,8 +9,7 @@
       "city": "City 1",
       "dob": "01/01/1983",
       "email": "abc@grumpy.com",
-      "phone": "7141233456",
-      "electionsVoted": []
+      "phone": "7141233456"
     },
     {
       "firstName": "Sree",
@@ -71,9 +70,21 @@
   "ballots": [
     {
       "id": 1,
+      "voterId": 11,
+      "electionName": "My First Election",
+      "voterReponse": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "id": 2,
       "voterId": 1,
       "electionName": "My First Election",
       "voterReponse": [
+        true,
+        false,
         false
       ]
     }

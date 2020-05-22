@@ -7,6 +7,6 @@ export const SuccessPage = (props) => {
 
     return (<>
         <div>{message}</div>
-        <button onClick="">Back to Home Page</button>
+        <a href="http://localhost:3000/">Back to Home Page</a>
         </>)
 }

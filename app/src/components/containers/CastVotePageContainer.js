@@ -5,13 +5,19 @@ import { CastVoteManagementPage } from '../pages/CastVoteManagementPage';
 import { refreshVoters } from '../../actions/voterActions';
 import { refreshBallots } from '../../actions/ballotManagementActions';
 import { refreshElections } from '../../actions/electionManagementActions';
-import { createCastVoteSelectedElectionAction ,createCastVoteStepAction} from '../../actions/castVoteManagementActions';
+import { createCastVoteSelectedElectionAction ,
+    createCastVoteStepAction,
+    addBallot,
+    createUserSelectedAction
+} from '../../actions/castVoteManagementActions';
 
 export const CastVotePageContainer = () => {
 
-   const {ballots, castVoteStep, elections, voters, castVoteSelectedElection} = useSelector(state => state);
+   const {ballots, castVoteStep, elections, voters, castVoteSelectedElection, userActiveId} = useSelector(state => state);
 
   const dispatchProps = bindActionCreators({
+    onUserActive: createUserSelectedAction,
+    onBallotAdd: addBallot,
     onCastVoteStep :createCastVoteStepAction,
     onRefreshVoters: refreshVoters,  
     onRefreshBallots:refreshBallots,
@@ -25,6 +31,7 @@ export const CastVotePageContainer = () => {
         elections={elections} 
         ballots={ballots} 
         voters={voters}
+        userActiveId={userActiveId}
         castVoteSelectedElection={castVoteSelectedElection}
     />;
   };
